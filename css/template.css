@@ -96,7 +96,7 @@ table {
 
 /* @end */
 
-/* @group Grid */
+/* @group Grid and page structure */
 
 /* ================ */
 /* = The 1Kb Grid = */     /* 12 columns, 60 pixels each, with 30 pixel gutter */
@@ -122,46 +122,17 @@ table {
     display: inline;
 }
 
-section, .row {
+.row {
     width: 1080px;
     margin: 0 auto;
     overflow: hidden;
 }
 
-.column section, .column .row { 
+.column .row { 
 	/* Rows nested inside columns. Was .row .row originally */
 	margin: 0 -15px;
     width: auto;
     display: inline-block;
-}
-
-/* @end */
-
-
-body {
-	font: 100%/1.4em "Verdana", sans-serif;
-	color: #000000;
-	background: url(http://mpaa/sites/mpaa/themes/mpaa/images/blue-fibers.png) repeat;
-}
-
-h1 {
-	font-size: 2em;
-	line-height: 1.4em;
-}
-
-h2 {
-	font-size: 1.2em;
-	line-height: 1.3em;
-	font-weight: bold;
-	color: #405679;
-	padding-bottom: .4em;
-	font-family: Georgia;
-}
-
-p {
-	font-size: .9em;
-	line-height: 1.4em;
-	padding-bottom: .7em;
 }
 
 #wrapper {
@@ -174,19 +145,218 @@ p {
 	box-shadow: 0px 1px 10px 3px #1c1c1c;
 }
 
+/* @end */
+
+/* @group Globals */
+
+body {
+	font: 100%/1.4em "Verdana", sans-serif;
+	color: #000000;
+	background: url(http://mpaa/sites/mpaa/themes/mpaa/images/blue-fibers.png) repeat;
+}
+
+h1 {
+	font-size: 2.5em;
+	line-height: 1.2em;
+	font-family: Georgia;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1.4em;
+	line-height: 1.2em;
+	font-weight: bold;
+	color: #283C5D;
+	padding-bottom: .4em;
+	font-family: Georgia;
+}
+
+h3 {
+	font-size: 1.2em;
+	line-height: 1.4em;
+	font-family: Georgia;
+	padding: .2em 0;
+}
+
+h4 {
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 1.4em;
+	padding: .4em 0 .2em;
+}
+
+h5 {
+	font-size: .8em;
+	font-weight: bold;
+	padding: .4em 0 .2em;
+}
+
+h6 {
+	font-size: .7em;
+	font-weight: bold;
+	padding: .4em 0 .2em;
+}
+
+p, ol, ul, dl {
+	font-size: .9em;
+	line-height: 1.4em;
+	padding-bottom: .7em;
+}
+
+ol, ul {
+	list-style-position: inside;
+	margin-left: 1em;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ul {
+	list-style-type: disc;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	padding-bottom: .5em;
+}
+
+table {
+	font-size: .9em;
+	line-height: 1.4em;
+	width: 100%;
+	margin-bottom: .8em;
+	text-align: left;
+}
+
+tr {
+	border: 1px solid #999999;
+}
+
+th {
+	font-weight: bold;
+	padding: .2em;
+	border-bottom: 2px solid #999999;
+}
+
+td {
+	padding: .2em;
+}
+
+em, i, cite {
+	font-style: italic;
+}
+
+strong, b {
+	font-weight: bold;
+}
+
+u {
+	text-decoration: underline;
+}
+
+sup {
+	vertical-align: super;
+}
+
+sub {
+	vertical-align: sub;
+}
+
+sup, sub {
+	font-size: .7em;
+	line-height: 1em;
+}
+
+small {
+	font-size: .7em;
+}
+
+abbr, acronym {
+	line-height: 1em;
+	border-bottom: 1px dotted #999999;
+	cursor: help;
+}
+
+blockquote {
+	font-family: Georgia;
+	font-size: 1.1em;
+    padding: 0 60px;
+	color: #919191;
+}
+
+blockquote:before {
+	color: #ECECEC;
+    display: block;
+    font-size: 700%;
+    content: "\201C";
+    height: 1px;
+    margin-left: -.45em;
+    position:relative;
+    top: 40px;
+}
+
+code {
+	font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;
+	font-size: .8em;
+	background-color: #f8f8f8;
+	padding: .3em;
+}
+
+pre {
+	font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;
+	margin-bottom: .8em; /* The same as `p` */
+	line-height: 1.4em;
+	font-size: .9em;
+	overflow-x: auto; /* Use horizontal scroller if needed; for Firefox 2, not needed in Firefox 3 */
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+ /* width: 99%; */
+	word-wrap: break-word;
+	padding: .8em .8em 0;
+}
+
+fieldset {
+	border: 1px solid #BCBCBC;
+	padding: .5em;
+}
+
+legend {
+	position: relative;
+	font-size: 1.4em;
+	line-height: 1.4em;
+	font-family: Georgia;
+	padding: .2em 0;
+	color: #919191;
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group Top */
+
 #top {
 	background: #ffffff url(http://mpaa/sites/mpaa/themes/mpaa/images/romney-sig.png) no-repeat right top;
 }
 
-header {
+#top header {
 	padding: 10px 0;
 	height: 100px;
 }
 
-header span {
+#top header span {
 	position: absolute;
 	left: -3000px;
 }
+
+/* @end */
+
+/* @group Nav */
 
 #search-box {
 	padding: 10px 5px;
@@ -225,6 +395,13 @@ header span {
 	box-shadow: inset 0px 0px 2px 2px #212121;
 }
 
+#nav-wrapper ul, #nav-wrapper ol {
+	list-style: none;
+	font-size: 1em;
+	padding-bottom: 0;
+	margin: 0;
+}
+
 nav {
 	padding: 0 ;
 	font-size: .9em;
@@ -246,7 +423,6 @@ nav li a {
 	text-decoration: none;
 	color: #fefefe;
 	text-shadow: 0px 2px 2px rgba(0,0,0,.8);
-	filter: dropshadow(color=#d5d5d5, offx=0, offy=2);
 	opacity: .9;
 	float: left;
 	width: auto;
@@ -257,6 +433,10 @@ nav li a {
 nav li a:hover, nav .active {
 	opacity: 1;
 }
+
+/* @end */
+
+/* @group Highlight */
 
 #highlight {
 	padding: 20px 0 25px;
@@ -269,8 +449,9 @@ nav li a:hover, nav .active {
 }
 
 #highlight article {
-	background: url(http://mpaa/sites/mpaa/themes/mpaa/images/orange-fibers.png) repeat;
-	border: 2px solid #DE7C19;
+	/*background: url(http://mpaa/sites/mpaa/themes/mpaa/images/orange-fibers.png) repeat;*/
+	background-color: #405679;
+	border: 2px solid #283C5D;
 	width: 326px;
 	-webkit-box-shadow: 0px 5px 5px 1px #666666;
 	-moz-box-shadow: 0px 5px 5px 1px #666666;
@@ -280,14 +461,17 @@ nav li a:hover, nav .active {
 }
 
 #highlight article .inset {
-	border: 1px solid #ffffff;
-	margin: 8px auto;
-	width: 290px;
-	height: 208px;
+	border: 1px solid #8495A9;
+	margin: 3px auto;
+	width: 297px;
+	height: 218px;
 	padding: 10px;
 }
 
 #highlight article h2 {
+	font-size: 1.4em;
+	font-weight: normal;
+	padding-bottom: .6em;
 	color: #fff;
 }
 
@@ -297,12 +481,105 @@ nav li a:hover, nav .active {
 	box-shadow: 0px 5px 5px 1px #666666;
 }
 
-#content {
+/* @end */
+
+/* @group Content */
+
+#content-wrapper {
 	background-color: #ffffff;
 	padding: 15px 0;
 }
+
+#content a, footer a {
+	color: #405679;
+	text-decoration: underline;
+}
+
+#content a:hover, footer a:hover {
+	color: #DE7C19;
+}
+
+#content h2 {
+	font-size: 2em;
+	padding-bottom: .2em;
+}
+
+#content h3 {
+	font-size: 1.4em;
+}
+
+/* @group Article */
+
+#post article header {
+	border-bottom: 2px solid #BCBCBC;
+	margin-bottom: 1em;
+}
+
+#post article header p {
+	color: #919191;
+	font-size: .8em;
+}
+
+#post article header time {
+	color: #000;
+}
+
+.comment_count {
+	float: right;
+}
+
+article header em {
+	font-family: Georgia;
+	font-style: italic;
+	font-size: 1.1em;
+}
+
+/* @end */
+
+#comments header {
+	border-top: 2px solid #BCBCBC;
+}
+
+#comments article {
+	overflow: hidden;
+	padding: 10px 0;
+	margin: 10px 0;
+}
+
+#comments article header {
+	float: left;
+	width: 190px;
+	border: none;
+	margin: 0 0 0 10px;
+	font-size: .8em;
+	line-height: 1.4em;
+	padding: 0 10px;
+}
+
+#comments .comment {
+	float: left;
+	width: 468px;
+}
+
+#comments article:first-of-type {
+	margin-top: 0;
+}
+
+#comments article:nth-child(odd) {
+	background: #ECECEC;
+	border: 1px solid #d7d7d7;
+	-moz-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+}
+
+/* @end */
+
+/* @group Bottom */
 
 #bottom {
 	background-color: #ffffff;
 	border-top: 2px solid #BCBCBC;
 }
+
+/* @end */

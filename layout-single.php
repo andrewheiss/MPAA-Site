@@ -49,23 +49,53 @@
 			</div>
 		</section>
 		
-		<section id="highlight" class="row">
-			<article class="column grid_4">
-				<div class="inset">
-					<h2>This is the best club website in the history of club websites</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-				</div>
-			</article>
-			<figure class="column grid_8">
-				<img src="images/ymountain.jpg" width="690" height="250" alt="Ymountain" />
-			</figure>
-		</section>
-		
 		<section id="content-wrapper" class="row">
-			<div class="column grid_6">
-				<h2>Here's a column</h2>
+			<div id="content"class="column grid_8">
+				<section id="post">
+					<article>
+						<header>
+							<h2>HTML Ipsum Presents</h2>
+							<p><em>by</em> <a href="#">Name of person</a> <em>on</em> <time datetime="2009-06-29T23:31:45+01:00" pubdate>July 14, 2011 &bull; 6:47 PM</time> <a href="#comments" class="comment_count">3 comments</a></p>
+						</header>
+						<p>The purpose of this HTML is to help determine what default settings are with CSS and to make sure that all possible HTML Elements are included in this HTML so as to not miss any possible Elements when designing a site.</p>
+					</article>
+				</section>
+				
+				<section id="comments">  
+				    <header>  
+				        <h3>Comments</h3>  
+				    </header>  
+				    <article>  
+				        <header>  
+				            <a href="#">George Washington</a><br />
+							<time datetime="2009-06-29T23:35:20+01:00">June 29th 2009 at 23:35</time>  
+				        </header>
+						<div class="comment">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>  
+						</div>
+				    </article>  
+				    <article>  
+				        <header>  
+				            <a href="#">Benjamin Franklin</a><br />
+							<time datetime="2009-06-29T23:40:09+01:00">June 29th 2009 at 23:40</time>  
+				        </header>  
+				        <div class="comment">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>  
+						</div>
+				    </article> 
+				 	<article>  
+				        <header>  
+				            <a href="#">Barack Obama</a><br />
+							<time datetime="2009-06-29T23:40:09+01:00">June 29th 2009 at 23:40</time>  
+				        </header>  
+				        <div class="comment">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>  
+						</div>
+				    </article>
+				</section>
 			</div>
-			<div class="column grid_6">
+
+			<div class="column grid_4">
 				<h2>And here's another column</h2>
 			</div>
 		</section>
