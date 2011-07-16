@@ -30,7 +30,6 @@ stylesheets[all][]   = css/tabs.css
 stylesheets[all][]   = css/messages.css
 stylesheets[all][]   = css/block-editing.css
 stylesheets[all][]   = css/blocks.css
-stylesheets[all][]   = css/navigation.css
 stylesheets[all][]   = css/panels-styles.css
 stylesheets[all][]   = css/views-styles.css
 stylesheets[all][]   = css/nodes.css
@@ -45,6 +44,8 @@ stylesheets[all][]   = css/wireframes.css
 stylesheets[all][]   = css/layout-fixed.css
 stylesheets[all][]   = css/page-backgrounds.css
 stylesheets[all][]   = css/pages.css
+stylesheets[all][]   = css/system-menus.css
+stylesheets[all][]   = css/navigation.css
 
 ; stylesheets[handheld][] = css/mobile.css
 ; stylesheets[only screen and (max-device-width: 480px)][] = css/iphone.css

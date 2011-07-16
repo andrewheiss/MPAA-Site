@@ -127,14 +127,7 @@
 		
 		<section id="nav-wrapper" class="row">
 			<nav class="column grid_8">
-				<ul>
-					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/home-button.png" width="17" height="13" alt="Home Button" /></a></li>
-					<li><a href="#">News</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">Alumni</a></li>
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">The Caucus</a></li>
-				</ul>
+				<?php print theme('links', $primary_links, array('class' => 'primary-links')); ?>
 			</nav>
 			<div id="search-box" class="column grid_4">
 				<input type="search" name="search" value="" placeholder="Search&hellip;" />
@@ -147,6 +140,12 @@
 				</ul>
 			</div>
 		</section>
+		
+		<?php 
+			if ($is_front) {
+				print $highlight;
+			} 
+		?>
 		
 		<section id="content-wrapper" class="row">
 			<div id="content" class="column grid_8">
