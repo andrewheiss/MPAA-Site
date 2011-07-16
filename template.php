@@ -96,14 +96,22 @@ function mpaa_preprocess(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered ("page" in this case.)
  */
-/* -- Delete this line if you want to use this function
-function mpaa_preprocess_page(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
 
-  // To remove a class from $classes_array, use array_diff().
-  //$vars['classes_array'] = array_diff($vars['classes_array'], array('class-to-remove'));
+function mpaa_preprocess_page(&$vars, $hook) {
+	// Disable Drupal's jQuery since Google's CDN version is hardcoded in the template
+	$scripts = drupal_add_js();
+	unset($scripts['core']['misc/jquery.js']);
+	$vars['scripts'] = drupal_get_js('header', $scripts);
+
+	// Strip duplicate head charset metatag
+	$matches = array();
+	  preg_match_all('/(<meta http-equiv=\"Content-Type\"[^>]*>)/', $vars['head'], $matches);
+	  if( count($matches) >= 2){
+	    $vars['head'] = preg_replace('/<meta http-equiv=\"Content-Type\"[^>]*>/', '', $vars['head'], 1); // strip 1 only
+	    $vars['head'] = preg_replace('/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/', '', $vars['head']);
+	  }
 }
-// */
+
 
 /**
  * Override or insert variables into the node templates.
@@ -153,3 +161,22 @@ function mpaa_preprocess_block(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
 }
 // */
+
+/**    Returns the offset from the origin timezone to the remote timezone, in seconds.
+*    @param $remote_tz;
+*    @param $origin_tz; If null the servers current timezone is used as the origin.
+*    @return int;
+*/
+function get_timezone_offset($remote_tz, $origin_tz = null) {
+    if($origin_tz === null) {
+        if(!is_string($origin_tz = date_default_timezone_get())) {
+            return false; // A UTC timestamp was returned -- bail out!
+        }
+    }
+    $origin_dtz = new DateTimeZone($origin_tz);
+    $remote_dtz = new DateTimeZone($remote_tz);
+    $origin_dt = new DateTime("now", $origin_dtz);
+    $remote_dt = new DateTime("now", $remote_dtz);
+    $offset = $origin_dtz->getOffset($origin_dt) - $remote_dtz->getOffset($remote_dt);
+    return $offset/60/60 . ":00";
+}

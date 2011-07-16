@@ -23,13 +23,11 @@ base theme = zen
   ; You can also override any of Zen's stylesheets or any module's stylesheets,
   ; an /extremely/ useful feature. See the excellent Drupal 6 Theme Guide at
   ; http://drupal.org/node/263967 for more details.
-stylesheets[all][]   = css/html-reset.css
-stylesheets[all][]   = css/wireframes.css
-stylesheets[all][]   = css/layout-fixed.css
-stylesheets[all][]   = css/page-backgrounds.css
+stylesheets[all][]   = css/style.css
+stylesheets[all][]   = css/formalize.css
+
 stylesheets[all][]   = css/tabs.css
 stylesheets[all][]   = css/messages.css
-stylesheets[all][]   = css/pages.css
 stylesheets[all][]   = css/block-editing.css
 stylesheets[all][]   = css/blocks.css
 stylesheets[all][]   = css/navigation.css
@@ -40,6 +38,14 @@ stylesheets[all][]   = css/comments.css
 stylesheets[all][]   = css/forms.css
 stylesheets[all][]   = css/fields.css
 stylesheets[print][] = css/print.css
+
+; Disabled stylesheets
+stylesheets[all][]   = css/html-reset.css
+stylesheets[all][]   = css/wireframes.css
+stylesheets[all][]   = css/layout-fixed.css
+stylesheets[all][]   = css/page-backgrounds.css
+stylesheets[all][]   = css/pages.css
+
 ; stylesheets[handheld][] = css/mobile.css
 ; stylesheets[only screen and (max-device-width: 480px)][] = css/iphone.css
 
@@ -49,6 +55,7 @@ conditional-stylesheets[if lte IE 6][all][] = css/ie6.css
 
   ; Optionally add some JavaScripts to your theme.
 ; scripts[] = js/script.js
+scripts[] = js/jquery.formalize.min.js
 
   ; The regions defined in Zen's default page.tpl.php file.  The name in
   ; brackets is the name of the variable in the page.tpl.php file, (e.g.
