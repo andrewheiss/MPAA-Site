@@ -126,8 +126,8 @@
 		</section>
 		
 		<section id="nav-wrapper" class="row">
-			<nav class="column grid_8">
-				<?php print theme('links', $primary_links, array('class' => 'primary-links')); ?>
+			<nav id="primary" class="column grid_8">
+				<?php print theme('links', $primary_links, array('class' => 'primary-links')); //menu_tree($menu_name = 'primary-links'); ?>
 			</nav>
 			<div id="search-box" class="column grid_4">
 				<input type="search" name="search" value="" placeholder="Search&hellip;" />
@@ -147,14 +147,27 @@
 			} 
 		?>
 		
+		<?php
+			if ($is_forum) {
+				$content_grid = 'grid_12';
+			} else {
+				$content_grid = 'grid_8';
+			}
+		?>
+		
 		<section id="content-wrapper" class="row">
-			<div id="content" class="column grid_8">
+			<div id="content" class="column <?php print $content_grid; ?>">
+				<?php print $breadcrumb; ?>
+				<?php if ($show_title): ?>
+				<h2><?php print $title; ?></h2>
+				<?php endif ?>
 				<?php print $content; ?>
 			</div>
-
+			<?php if (!$is_forum): ?>
 			<div class="column grid_4">
 				<h2>And here's another column</h2>
 			</div>
+			<?php endif ?>
 		</section>
 		
 		<section id="bottom" class="row">

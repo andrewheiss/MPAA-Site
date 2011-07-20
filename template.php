@@ -71,6 +71,9 @@ function mpaa_theme(&$existing, $type, $theme, $path) {
   $hooks['hook_name_here'] = array( // Details go here );
   */
   // @TODO: Needs detailed comments. Patches welcome!
+
+  $hooks['comment_form'] = array ('arguments' => array('form' => NULL));
+	
   return $hooks;
 }
 
@@ -87,6 +90,11 @@ function mpaa_preprocess(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
 }
 // */
+
+function forum_thread_icon_path() {
+  return base_path() . path_to_theme() ."/images";
+}
+
 
 /**
  * Override or insert variables into the page templates.
@@ -110,6 +118,21 @@ function mpaa_preprocess_page(&$vars, $hook) {
 	    $vars['head'] = preg_replace('/<meta http-equiv=\"Content-Type\"[^>]*>/', '', $vars['head'], 1); // strip 1 only
 	    $vars['head'] = preg_replace('/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/', '', $vars['head']);
 	  }
+	
+	
+	// Determine if page is a forum
+	$node = $vars['node'];
+	$template = $vars['template_files'][0];
+	
+	if ($template == 'page-forum' || $node->type == 'forum') {
+		$vars['is_forum'] = TRUE;
+	}
+	
+	// Hide the page title on node pages (since their titles are included in the node template)
+	$vars['show_title'] = TRUE;	
+	if ($template == 'page-node') {
+		$vars['show_title'] = FALSE;
+	} 
 }
 
 
@@ -167,3 +190,66 @@ function mpaa_preprocess_block(&$vars, $hook) {
 *    @param $origin_tz; If null the servers current timezone is used as the origin.
 *    @return int;
 */
+
+function mpaa_breadcrumb($breadcrumb) {
+  if (!empty($breadcrumb)) {
+    $lastitem = sizeof($breadcrumb);
+    $crumbs = '<nav class="breadcrumbs">';
+    $a=1;
+    foreach($breadcrumb as $value) {
+        if ($a!=$lastitem){
+         $crumbs .= $value . ' &rsaquo; ';
+         $a++;
+        }
+        else {
+            $crumbs .= '<span class="breadcrumbcurrent">'.$value.'</span>';
+        }
+    }
+    $crumbs .= '</nav>';
+  }
+  return $crumbs;
+}
+
+function mpaa_comment_form($form) {
+	// Rename some of the form element labels.
+	$form['name']['#title'] = t('Name');
+	$form['homepage']['#title'] = t('Website');
+	$form['comment_filter']['comment']['#title']  = t('Your comment');	
+	$form['mail']['#description'] = t('(Will not be shared or displayed)');
+	
+	// Output comment form
+	$output = '';
+	if ($form['comment_preview']) {
+		$form['comment_preview']['#prefix'] = '<div id="comment-preview">';
+		$output .= drupal_render($form['comment_preview']);
+	}
+	
+	if ($form['_author']) {
+		$class = 'author';
+	} else {
+		$class = 'normal';
+	}
+	$output .= "<div id=\"comment-form-wrapper\" class=\"$class\">";
+	
+	$output .= '<div class="information">';
+	if ($form['_author']) {
+		$output .= drupal_render($form['_author']);
+	}
+	$output .= drupal_render($form['name']);
+	$output .= drupal_render($form['mail']);
+	$output .= drupal_render($form['homepage']);
+	$output .= '</div>';
+	$output .= '<div class="comment-field">';
+	$output .= drupal_render($form['comment_filter']['comment']);
+	$output .= '</div>';
+	$output .= '<div class="misc">';
+	$output .= drupal_render($form);
+	$output .= '</div>';
+	$output .= '</div>';
+	
+	// echo "<pre>";
+	// print_r($form);
+	// echo "</pre>";
+	
+	return $output;
+}
