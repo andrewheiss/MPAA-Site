@@ -168,6 +168,10 @@ input[type="week"] {
   outline: 0;
   padding: 2px 3px;
   font-size: 13px;
+	transition: all 0.25s ease-in-out;
+	-webkit-transition: all 0.25s ease-in-out;
+	-moz-transition: all 0.25s ease-in-out;
+	margin: 0 3px;
   /*
     Leaving out Helvetica Neue, to not throw off size="..."
     on inputs. Arial is more reliable, on Windows and OS X.

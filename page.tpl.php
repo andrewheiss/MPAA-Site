@@ -157,6 +157,7 @@
 		
 		<section id="content-wrapper" class="row">
 			<div id="content" class="column <?php print $content_grid; ?>">
+				<?php print $messages; ?>
 				<?php print $breadcrumb; ?>
 				<?php if ($show_title): ?>
 				<h2><?php print $title; ?></h2>

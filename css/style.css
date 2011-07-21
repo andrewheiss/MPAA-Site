@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?X
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?H
 */
 
 /* @group Sheet setup */
@@ -357,12 +357,14 @@ fieldset {
 
 legend {
 	position: relative;
-	font-size: 1.4em;
-	line-height: 1.4em;
-	font-family: Georgia;
-	padding: .2em 0;
+	font-size: .8em;
+	line-height: 1.2em;
+	padding-right: .5em;
 	color: #919191;
-	font-weight: bold;
+}
+
+legend a {
+	text-decoration: none !important;
 }
 
 /* @end */
@@ -472,9 +474,14 @@ legend {
 /* @group Highlight */
 
 #highlight {
-	padding: 20px 0 25px;
+	padding: 20px 0 45px;
 	background-color: #D3D3D3;
 	border-bottom: 2px solid #BCBCBC;
+	position: relative;
+}
+
+#highlight .block {
+	margin-bottom: 0 !important;
 }
 
 #highlight img {
@@ -507,10 +514,47 @@ legend {
 	color: #fff;
 }
 
+#highlight article a {
+	color: #fff;
+}
+
+#highlight article h2 a {
+	text-decoration: none;
+}
+
+#highlight .more {
+	text-align: right;
+}
+
 #highlight figure {
 	-webkit-box-shadow: 0px 5px 5px 1px #666666;
 	-moz-box-shadow: 0px 5px 5px 1px #666666;
 	box-shadow: 0px 5px 5px 1px #666666;
+}
+
+#views_slideshow_singleframe_pager_front_highlight-block_1 {
+	position: absolute;
+	bottom: 8px;
+	right: 375px;
+	text-align: center;
+	width: 300px;
+	height: 1.7em;
+	line-height: 1.7em;
+	font-size: .9em;
+	background-color: rgba(0,0,0,.5);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#views_slideshow_singleframe_pager_front_highlight-block_1 a {
+	text-decoration: none;
+	color: #fff;
+	text-shadow: 0px 0px 1px rgba(0,0,0,1);
+}
+
+#highlight .activeSlide a {
+	text-shadow: 0px 0px 5px rgba(255, 255, 255, 1), 0px 0px 1px rgba(0,0,0,1);
 }
 
 /* @end */
@@ -525,6 +569,17 @@ legend {
 .textarea-identifier {
 	font-size: .7em;
 	font-style: italic;
+}
+
+.message {
+	font-size: .9em;
+	color: #ffffff;
+	padding: .4em 1em;
+	margin: 1em 0 1em;
+	background-color: #DE7C19;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
 /* @group Breadcrumbs */
@@ -571,18 +626,22 @@ legend {
 
 /* @group Article */
 
-#post article header {
+.post article header {
 	border-bottom: 2px solid #BCBCBC;
 	margin-bottom: 1em;
 }
 
-#post article header p {
+.post article header p {
 	color: #919191;
 	font-size: .8em;
 }
 
-#post article header time {
+.post article header time {
 	color: #000;
+}
+
+.view-content .post {
+	margin-bottom: 2em;
 }
 
 .comment_count {
@@ -739,9 +798,9 @@ tr.even, tr.odd {
 	margin: 10px 0;
 	background: #ECECEC;
 	border: 1px solid #d7d7d7;
-	-moz-border-radius: 11px;
-	-webkit-border-radius: 11px;
-	border-radius: 11px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 }
 
 #comments article header, #comment-preview article header {
@@ -817,7 +876,7 @@ tr.even, tr.odd {
 
 .node-type-forum #comment-form .misc {
 	width: 340px;
-	margin: 1.7em 0 0 20px;
+	margin: 1.4em 0 0 20px;
 }
 
 #comment-form .form-item {
