@@ -113,13 +113,16 @@
 	<title><?php print $head_title; ?></title>
 	<?php print $head; ?>
 	<?php print $styles; ?>
+	<!--[if lt IE 9]>
+	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 <body class="<?php print $classes; ?>">
 	<div id="wrapper">
 		<section id="top" class="row">
 			<header class="column grid_9">
 				<h1>
-					<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+					<a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
 					<span><?php print $site_name; ?></span>
 				</h1>
 			</header>
@@ -148,7 +151,7 @@
 		?>
 		
 		<?php
-			if ($is_forum) {
+			if ($is_forum || $is_login) {
 				$content_grid = 'grid_12';
 			} else {
 				$content_grid = 'grid_8';
@@ -159,12 +162,26 @@
 			<div id="content" class="column <?php print $content_grid; ?>">
 				<?php print $messages; ?>
 				<?php print $breadcrumb; ?>
+				
 				<?php if ($show_title): ?>
 				<h2><?php print $title; ?></h2>
 				<?php endif ?>
+				
+				<?php if ($is_login): ?>
+					<p>Do you already have an account at one of these sites? Use it to create your new account or log in to this site.</p>
+				<?php endif ?>
+				
 				<?php print $content; ?>
+				
+				<?php if ($is_login): ?>
+					<?php $form = drupal_get_form('user_register'); ?>
+					<fieldset class="collapsible collapsed">
+						<legend><a href="#">Create a new MPAA site account</a></legend>
+						<?php print $form; ?>
+					</fieldset>
+				<?php endif ?>
 			</div>
-			<?php if (!$is_forum): ?>
+			<?php if (!$is_forum && !$is_login): ?>
 			<div class="column grid_4">
 				<h2>And here's another column</h2>
 			</div>
@@ -188,9 +205,6 @@
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<?php print $scripts; ?>
-	<!--[if lt IE 9]>
-	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 	<?php print $page_closure; ?>
 	<?php print $closure; ?>
 </body>

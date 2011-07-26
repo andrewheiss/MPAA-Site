@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?H
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?v
 */
 
 /* @group Sheet setup */
@@ -924,6 +924,22 @@ tr.even, tr.odd {
 
 .form-item input.error, .form-item textarea.error, .form-item select.error {
   border: 2px solid #DE7C19;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group User pages */
+
+/* @group OpenID Selector stuff */
+
+#openid_choice p {
+	display: none;
+}
+
+#edit-openid-identifier-wrapper {
+	margin: 0;
 }
 
 /* @end */

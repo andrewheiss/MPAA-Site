@@ -60,6 +60,11 @@
  *   and http://drupal.org/node/190815#template-suggestions
  */
 
+function add_colon($date) {
+	$timezone_minutes = substr($date, -2);
+	$output = rtrim($date, $timezone_minutes) . ":" . $timezone_minutes;
+	return $output;
+}
 
 /**
  * Implementation of HOOK_theme().
@@ -73,6 +78,8 @@ function mpaa_theme(&$existing, $type, $theme, $path) {
   // @TODO: Needs detailed comments. Patches welcome!
 
   $hooks['comment_form'] = array ('arguments' => array('form' => NULL));
+
+  $hooks['user_login'] = array ('template' => 'user-login', 'arguments' => array('form' => NULL));
 	
   return $hooks;
 }
@@ -85,9 +92,11 @@ function mpaa_theme(&$existing, $type, $theme, $path) {
  * @param $hook
  *   The name of the template being rendered (name of the .tpl.php file.)
  */
-/* -- Delete this line if you want to use this function
+
 function mpaa_preprocess(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+	//   	echo "<pre>";
+	// print_r($vars);
+	// echo "</pre>";
 }
 // */
 
@@ -125,12 +134,19 @@ function mpaa_preprocess_page(&$vars, $hook) {
 	$template = $vars['template_files'][0];
 	
 	if ($template == 'page-forum' || $node->type == 'forum') {
+		$is_forum = TRUE;
 		$vars['is_forum'] = TRUE;
+	}
+	
+	if (in_array('page-user-login', $vars['template_files'])) {
+		$is_login = TRUE;
+		$vars['is_login'] = TRUE;
+		$vars['title'] = drupal_set_title(t('Log in'));
 	}
 	
 	// Hide the page title on node pages (since their titles are included in the node template)
 	$vars['show_title'] = TRUE;	
-	if ($template == 'page-node') {
+	if ($is_forum) {
 		$vars['show_title'] = FALSE;
 	} 
 }
@@ -252,4 +268,9 @@ function mpaa_comment_form($form) {
 	// echo "</pre>";
 	
 	return $output;
+}
+
+function mpaa_preprocess_user_login(&$variables) {
+	drupal_add_js('misc/collapse.js');
+	$variables['rendered'] = drupal_render($variables['form']);
 }

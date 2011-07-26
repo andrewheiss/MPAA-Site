@@ -15,7 +15,7 @@ if ($node->view) {
 		<header>
 			<<?php print $heading_tag; ?> class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></<?php print $heading_tag; ?>>
 			<?php if ($node->type == 'blog'): ?>
-			<p><em>by</em> <a href="#"><?php print $name; ?></a> <em>on</em> <time datetime="<?php print format_date($created, 'custom', 'Y-m-d\TH:i:sO'); ?>"<?php print $pubdate; ?>><?php print format_date($created, 'large'); ?></time> <a href="#comments" class="comment_count"><?php print $comment_count; ?> comment(s)</a></p>
+			<p><em>by</em> <?php print $name; ?> <em>on</em> <time datetime="<?php print add_colon(format_date($created, 'custom', 'Y-m-d\TH:i:sO')); ?>"<?php print $pubdate; ?>><?php print format_date($created, 'large'); ?></time> <a href="#comments" class="comment_count"><?php print $comment_count; ?> comment(s)</a></p>
 			<?php endif; ?>
 		</header>
 		<?php print $content; ?>
