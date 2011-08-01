@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?v
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?l
 */
 
 /* @group Sheet setup */
@@ -132,7 +132,7 @@ table {
     overflow: hidden;
 }
 
-.column .row { 
+.column .row, .row .row { 
 	/* Rows nested inside columns. Was .row .row originally */
 	margin: 0 -15px;
     width: auto;
@@ -395,7 +395,7 @@ legend a {
 }
 
 #search-box input {
-	width: 170px;
+	width: 160px;
 	float: right;
 	margin-left: 10px;
 }
@@ -464,9 +464,23 @@ legend a {
 /*  background: url(../images/home-button.png) no-repeat 0 5px;*/
 }
 
-#primary li a:hover, #primary .active, #primary .active-trail a {
+#primary li a:hover, #primary .active, #primary .active-trail a, .login-button a:hover {
 	opacity: 1;
 	text-shadow: 0px 0px 20px rgba(255, 255, 255, .6), 0px 2px 2px rgba(0,0,0,.8);  
+}
+
+.login-button {
+	float: right;
+}
+
+.login-button a {
+	color: #fff;
+	text-decoration: none;
+	font-size: .6em;
+	text-transform: uppercase;
+	text-shadow: 0px 2px 2px rgba(0,0,0,.8);
+	opacity: .9;
+	margin-left: 1em;
 }
 
 /* @end */
@@ -581,6 +595,60 @@ legend a {
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
+
+/* @group Tabs */
+
+ul.primary, ul.secondary {
+	border-collapse: collapse;
+	padding: 0;
+	white-space: nowrap;
+	list-style: none;
+	margin: 0 0 10px;
+	line-height: normal;
+	border-bottom: inherit;
+	font-size: .8em;
+}
+
+ul.secondary {
+	padding-top: 10px;
+	border-top: 1px solid #BCBCBC;
+	margin-bottom: 20px;
+}
+
+ul.primary li, ul.secondary li {
+	display: inline;
+	border: none !important;
+	padding: 0;
+}
+
+ul.primary li a, ul.secondary li a {
+	background: #BCBCBC;
+	border: 1px solid #919191;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	color: #fff !important;
+	margin-right: 0.5em;
+	padding: 0 1em;
+	text-decoration: none !important;
+}
+
+ul.primary li.active a, ul.secondary li.active a {
+	color: #000 !important;
+	background-color: #fff;
+	border: 1px solid #919191;
+}
+
+ul.primary li a:hover, ul.secondary li a:hover {
+	background-color: #D3D3D3;
+	border-color: #919191;
+}
+
+ul.primary li.active a:hover, ul.secondary li.active a:hover {
+	background-color: inherit;
+}
+
+/* @end */
 
 /* @group Breadcrumbs */
 
@@ -879,16 +947,16 @@ tr.even, tr.odd {
 	margin: 1.4em 0 0 20px;
 }
 
-#comment-form .form-item {
+.form-item {
 	margin: .5em 0;
 }
 
-#comment-form .form-item label {
+.form-item label {
 	font-weight: normal;
 	font-size: .9em;
 }
 
-#comment-form .description {
+.form-item .description {
 	margin-top: .4em;
 	font-size: .6em;
 	line-height: 1.4em;
@@ -941,6 +1009,52 @@ tr.even, tr.odd {
 #edit-openid-identifier-wrapper {
 	margin: 0;
 }
+
+/* @end */
+
+/* @group Profile */
+
+.profile h3 {
+	border: none;
+}
+
+.profile dl, .profile dt, .profile dd {
+	margin: 0;
+}
+
+.profile .views-row {
+	margin-bottom: 1em;
+}
+
+.profile .views-row .views-field-timestamp {
+	font-size: .8em;
+	border-bottom: 1px solid #BCBCBC;
+	margin-bottom: .4em;
+}
+
+.profile .views-row .views-field-timestamp em {
+	font-family: Georgia;
+	font-style: italic;
+}
+
+.profile .views-row .views-field-comment {
+	font-size: .9em;
+}
+
+.view-content h3 {
+	font-size: 1.1em !important;
+}
+
+.profile .views-row .updated-date {
+	font-size: .8em;
+	font-style: italic;
+	color: #919191;
+}
+
+.profile .item-list ul li {
+	margin: 0;
+}
+
 
 /* @end */
 

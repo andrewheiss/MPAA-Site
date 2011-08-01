@@ -133,6 +133,9 @@
 				<?php print theme('links', $primary_links, array('class' => 'primary-links')); //menu_tree($menu_name = 'primary-links'); ?>
 			</nav>
 			<div id="search-box" class="column grid_4">
+				<?php if ($show_login): ?>
+				<span class="login-button"><a href="/user/login">Log in</a></span>
+				<?php endif ?>
 				<input type="search" name="search" value="" placeholder="Search&hellip;" />
 				<ul class="social-icons">
 					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/facebook.png" alt="Facebook" /></a></li>
@@ -151,37 +154,29 @@
 		?>
 		
 		<?php
-			if ($is_forum || $is_login) {
-				$content_grid = 'grid_12';
-			} else {
+			if ($show_sidebar) {
 				$content_grid = 'grid_8';
+			} else {
+				$content_grid = 'grid_12';
 			}
 		?>
 		
 		<section id="content-wrapper" class="row">
 			<div id="content" class="column <?php print $content_grid; ?>">
-				<?php print $messages; ?>
 				<?php print $breadcrumb; ?>
+				
+				<?php print $tabs; ?>
 				
 				<?php if ($show_title): ?>
 				<h2><?php print $title; ?></h2>
 				<?php endif ?>
 				
-				<?php if ($is_login): ?>
-					<p>Do you already have an account at one of these sites? Use it to create your new account or log in to this site.</p>
-				<?php endif ?>
+				<?php print $messages; ?>
 				
 				<?php print $content; ?>
 				
-				<?php if ($is_login): ?>
-					<?php $form = drupal_get_form('user_register'); ?>
-					<fieldset class="collapsible collapsed">
-						<legend><a href="#">Create a new MPAA site account</a></legend>
-						<?php print $form; ?>
-					</fieldset>
-				<?php endif ?>
 			</div>
-			<?php if (!$is_forum && !$is_login): ?>
+			<?php if ($show_sidebar): ?>
 			<div class="column grid_4">
 				<h2>And here's another column</h2>
 			</div>

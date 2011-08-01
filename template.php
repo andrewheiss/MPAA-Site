@@ -80,6 +80,7 @@ function mpaa_theme(&$existing, $type, $theme, $path) {
   $hooks['comment_form'] = array ('arguments' => array('form' => NULL));
 
   $hooks['user_login'] = array ('template' => 'user-login', 'arguments' => array('form' => NULL));
+  $hooks['user_register'] = array ('template' => 'user-register', 'arguments' => array('form' => NULL));
 	
   return $hooks;
 }
@@ -94,7 +95,7 @@ function mpaa_theme(&$existing, $type, $theme, $path) {
  */
 
 function mpaa_preprocess(&$vars, $hook) {
-	//   	echo "<pre>";
+	// echo "<pre>";
 	// print_r($vars);
 	// echo "</pre>";
 }
@@ -128,27 +129,45 @@ function mpaa_preprocess_page(&$vars, $hook) {
 	    $vars['head'] = preg_replace('/(^[\r\n]*|[\r\n]+)[\s\t]*[\r\n]+/', '', $vars['head']);
 	  }
 	
-	
 	// Determine if page is a forum
 	$node = $vars['node'];
 	$template = $vars['template_files'][0];
 	
 	if ($template == 'page-forum' || $node->type == 'forum') {
 		$is_forum = TRUE;
-		$vars['is_forum'] = TRUE;
+	}
+	
+	if (in_array('page-user', $vars['template_files'])) {
+		$is_user = TRUE;
 	}
 	
 	if (in_array('page-user-login', $vars['template_files'])) {
-		$is_login = TRUE;
-		$vars['is_login'] = TRUE;
 		$vars['title'] = drupal_set_title(t('Log in'));
 	}
 	
-	// Hide the page title on node pages (since their titles are included in the node template)
+	if (in_array('page-user-register', $vars['template_files'])) {
+		$vars['title'] = drupal_set_title(t('Create new account'));
+	}
+	
+	// Hide the page title on nodes, since their titles are included in the node template
 	$vars['show_title'] = TRUE;	
-	if ($is_forum) {
+	if ($template == 'page-node') {
 		$vars['show_title'] = FALSE;
 	} 
+	
+	// Show or hide the sidebar
+	$vars['show_sidebar'] = TRUE;
+	if ($is_forum || $is_user) {
+		$vars['show_sidebar'] = FALSE;
+	}
+	
+	// Determine if user is logged in or not
+	global $user;
+	$vars['show_login'] = FALSE;
+	if ($user->uid == 0) {
+		$vars['show_login'] = TRUE;
+	}
+
 }
 
 
@@ -270,7 +289,13 @@ function mpaa_comment_form($form) {
 	return $output;
 }
 
-function mpaa_preprocess_user_login(&$variables) {
+function mpaa_preprocess_user_login(&$vars) {
 	drupal_add_js('misc/collapse.js');
-	$variables['rendered'] = drupal_render($variables['form']);
+	$vars['rendered'] = drupal_render($vars['form']);
+}
+
+function mpaa_preprocess_user_register(&$vars) {
+	drupal_add_js('misc/collapse.js');
+	$vars['form']['submit']['#value'] = t('Create account');
+	$vars['rendered'] = drupal_render($vars['form']);
 }

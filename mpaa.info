@@ -25,8 +25,6 @@ base theme = zen
   ; http://drupal.org/node/263967 for more details.
 stylesheets[all][]   = css/style.css
 stylesheets[all][]   = css/formalize.css
-
-stylesheets[all][]   = css/tabs.css
 stylesheets[all][]   = css/messages.css
 stylesheets[all][]   = css/block-editing.css
 stylesheets[all][]   = css/blocks.css
@@ -49,6 +47,7 @@ stylesheets[all][]   = css/pages.css
 stylesheets[all][]   = css/system-menus.css
 stylesheets[all][]   = css/navigation.css
 stylesheets[all][]   = css/comments.css
+stylesheets[all][]   = css/tabs.css
 
 ; stylesheets[handheld][] = css/mobile.css
 ; stylesheets[only screen and (max-device-width: 480px)][] = css/iphone.css
@@ -79,6 +78,8 @@ regions[content_bottom] = Content bottom
 regions[header]         = Header
 regions[footer]         = Footer
 regions[page_closure]   = Page closure
+regions[user_left] 		= User profile (left)
+regions[user_right]		= User profile (right)
 
   ; Various page elements output by the theme can be toggled on and off. The
   ; "features" control which of these check boxes display on the
