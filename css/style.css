@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?l
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?D
 */
 
 /* @group Sheet setup */
@@ -624,9 +624,9 @@ ul.primary li, ul.secondary li {
 ul.primary li a, ul.secondary li a {
 	background: #BCBCBC;
 	border: 1px solid #919191;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 	color: #fff !important;
 	margin-right: 0.5em;
 	padding: 0 1em;
