@@ -66,6 +66,10 @@ function add_colon($date) {
 	return $output;
 }
 
+function fix_spaces($path) {
+	return str_replace(' ', '%20', $path);
+}
+
 /**
  * Implementation of HOOK_theme().
  */

@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?D
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?w
 */
 
 /* @group Sheet setup */
@@ -488,7 +488,7 @@ legend a {
 /* @group Highlight */
 
 #highlight {
-	padding: 20px 0 45px;
+	padding: 20px 0 30px;
 	background-color: #D3D3D3;
 	border-bottom: 2px solid #BCBCBC;
 	position: relative;
@@ -548,27 +548,30 @@ legend a {
 
 #views_slideshow_singleframe_pager_front_highlight-block_1 {
 	position: absolute;
-	bottom: 8px;
+	bottom: 5px;
 	right: 375px;
 	text-align: center;
-	width: 300px;
-	height: 1.7em;
-	line-height: 1.7em;
-	font-size: .9em;
-	background-color: rgba(0,0,0,.5);
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	width: 330px;
+	height: 1.5em;
+	line-height: 1.5em;
+	font-size: .7em;
+	background: -moz-linear-gradient(left, rgba(127,127,127,0) 0%, rgba(127,127,127,1) 15%, rgba(127,127,127,1) 85%, rgba(127,127,127,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(127,127,127,0)), color-stop(15%,rgba(127,127,127,1)), color-stop(85%,rgba(127,127,127,1)), color-stop(100%,rgba(127,127,127,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(127,127,127,0) 0%,rgba(127,127,127,1) 15%,rgba(127,127,127,1) 85%,rgba(127,127,127,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(127,127,127,0) 0%,rgba(127,127,127,1) 15%,rgba(127,127,127,1) 85%,rgba(127,127,127,0) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(left, rgba(127,127,127,0) 0%,rgba(127,127,127,1) 15%,rgba(127,127,127,1) 85%,rgba(127,127,127,0) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#007f7f7f', endColorstr='#007f7f7f',GradientType=1 ); /* IE6-9 */
+	background: linear-gradient(left, rgba(127,127,127,0) 0%,rgba(127,127,127,1) 15%,rgba(127,127,127,1) 85%,rgba(127,127,127,0) 100%); /* W3C */
 }
 
 #views_slideshow_singleframe_pager_front_highlight-block_1 a {
 	text-decoration: none;
 	color: #fff;
-	text-shadow: 0px 0px 1px rgba(0,0,0,1);
 }
 
 #highlight .activeSlide a {
-	text-shadow: 0px 0px 5px rgba(255, 255, 255, 1), 0px 0px 1px rgba(0,0,0,1);
+	font-weight: bold;
+	text-shadow: 0px 0px 4px rgba(255, 255, 255, 1);
 }
 
 /* @end */
@@ -697,15 +700,45 @@ ul.primary li.active a:hover, ul.secondary li.active a:hover {
 .post article header {
 	border-bottom: 2px solid #BCBCBC;
 	margin-bottom: 1em;
+	overflow: hidden;
 }
 
 .post article header p {
-	color: #919191;
 	font-size: .8em;
+	padding-bottom: .2em;
+}
+
+.post article header .caucus-author {
+	font-size: .9em;
+	padding-bottom: .4em;
 }
 
 .post article header time {
 	color: #000;
+}
+
+.caucus-topic header h4 {
+	font-size: .8em;
+	margin: 0;
+	padding: 0;
+	color: #919191;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.caucus-topic header h4 time {
+	color: #919191;
+}
+
+.node-type-caucus-post article header img {
+	float: left;
+	margin: 0 10px 5px 0;
+	width: 50px;
+}
+
+.node-type-caucus-post article header .post-meta {
+	float: left;
+	width: 630px;
 }
 
 .view-content .post {
@@ -717,9 +750,50 @@ ul.primary li.active a:hover, ul.secondary li.active a:hover {
 }
 
 article header em {
+	color: #919191;
 	font-family: Georgia;
 	font-style: italic;
 	font-size: 1.1em;
+}
+
+.small-banner {
+	padding: 0 0 .5em;
+	margin-bottom: .5em;
+	border-bottom: 1px solid #BCBCBC;
+}
+
+#caucus-description p {
+	font-family: Georgia;
+	font-size: 1.3em;
+	color: #919191;
+}
+
+section.caucus-topic {
+	margin-bottom: .8em;
+	border-bottom: 4px solid #BCBCBC;
+}
+
+article.caucus-topic {
+	margin: 0;
+	padding: .5em 0 0;
+	border-top: 2px solid #BCBCBC;
+}
+
+article.caucus-topic header {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+article.caucus-topic header h3 {
+	padding: 0;
+}
+
+#block-views-caucus_index-block_1 {
+	margin-top: 1em;
+}
+
+#block-views-caucus_index-block_1 h3 {
+	padding: 0;
 }
 
 /* @end */
@@ -754,7 +828,7 @@ tr.even, tr.odd {
 	text-decoration: none;
 }
 
-#forum th .active img{
+#forum th .active img {
 	padding-left: .5em;
 }
 

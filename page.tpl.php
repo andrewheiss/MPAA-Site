@@ -175,6 +175,7 @@
 				
 				<?php print $content; ?>
 				
+				<?php print $caucus_index; ?>
 			</div>
 			<?php if ($show_sidebar): ?>
 			<div class="column grid_4">
