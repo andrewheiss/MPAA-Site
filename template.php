@@ -271,6 +271,7 @@ function mpaa_comment_form($form) {
 	$form['homepage']['#title'] = t('Website');
 	$form['comment_filter']['comment']['#title']  = t('Your comment');	
 	$form['mail']['#description'] = t('(Will not be shared or displayed)');
+	$form['submit']['#value'] = t('Post comment');
 	
 	// Output comment form
 	$output = '';
