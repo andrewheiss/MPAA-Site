@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?O
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?c
 */
 
 /* @group Sheet setup */
@@ -201,14 +201,14 @@ h2 {
 }
 
 h3 {
-	font-size: 1.2em;
+	font-size: 1.3em;
 	line-height: 1.4em;
 	font-family: Georgia;
 	padding: .2em 0;
 }
 
 h4 {
-	font-size: 1em;
+	font-size: 1.1em;
 	font-weight: bold;
 	line-height: 1.4em;
 	padding: .4em 0 .2em;
@@ -361,10 +361,6 @@ legend {
 	line-height: 1.2em;
 	padding-right: .5em;
 	color: #919191;
-}
-
-legend a {
-	text-decoration: none !important;
 }
 
 /* @end */
@@ -532,8 +528,9 @@ legend a {
 	color: #fff;
 }
 
-#highlight article h2 a {
-	text-decoration: none;
+#highlight p {
+	color: #fff;
+	font-size: .9em;	
 }
 
 #highlight .more {
@@ -565,7 +562,6 @@ legend a {
 }
 
 #views_slideshow_singleframe_pager_front_highlight-block_1 a {
-	text-decoration: none;
 	color: #fff;
 }
 
@@ -589,8 +585,8 @@ legend a {
 }
 
 .message-box {
-	font-size: .8em;
-	color: #ffffff;
+	font-size: .8em !important;
+	color: #ffffff !important;
 	padding: .4em 1em;
 	margin: 0 0 1em;
 	background-color: #BCBCBC;
@@ -637,7 +633,6 @@ ul.primary li a, ul.secondary li a {
 	color: #fff !important;
 	margin-right: 0.5em;
 	padding: 0 1em;
-	text-decoration: none !important;
 }
 
 ul.primary li.active a, ul.secondary li.active a {
@@ -667,32 +662,24 @@ ul.primary li.active a:hover, ul.secondary li.active a:hover {
 }
 
 .breadcrumbs a {
-	color: #919191 !important;
-	text-decoration: none !important;
-}
-
-.breadcrumbs a:hover {
-	text-decoration: underline !important;
+	color: #919191;
 }
 
 /* @end */
 
-#content a, footer a {
-	color: #405679;
-	text-decoration: underline;
+a {
+	color: #33496B;
+	text-decoration: none;
 }
 
-#content a:hover, footer a:hover {
+a:hover {
 	color: #DE7C19;
+	text-decoration: underline;
 }
 
 #content h2 {
 	font-size: 2em;
 	padding-bottom: .2em;
-}
-
-#content h2 a {
-	text-decoration: none;
 }
 
 #content h3 {
@@ -721,19 +708,6 @@ ul.primary li.active a:hover, ul.secondary li.active a:hover {
 	color: #000;
 }
 
-.caucus-topic header h4 {
-	font-size: .8em;
-	margin: 0;
-	padding: 0;
-	color: #919191;
-	font-weight: normal;
-	text-transform: uppercase;
-}
-
-.caucus-topic header h4 time {
-	color: #919191;
-}
-
 .node-type-caucus-post article header img {
 	float: left;
 	margin: 0 10px 5px 0;
@@ -753,7 +727,7 @@ ul.primary li.active a:hover, ul.secondary li.active a:hover {
 	float: right;
 }
 
-article header em {
+article header em, {
 	color: #919191;
 	font-family: Georgia;
 	font-style: italic;
@@ -779,29 +753,6 @@ article header em {
 section.caucus-topic {
 	margin-bottom: .8em;
 	border-bottom: 4px solid #BCBCBC;
-}
-
-article.caucus-topic {
-	margin: 0;
-	padding: 1em 0 .5em;
-	border-top: 2px solid #BCBCBC;
-}
-
-article.caucus-topic header {
-	border-bottom: none;
-	margin-bottom: 0;
-}
-
-article.caucus-topic header h3 {
-	padding: 0;
-}
-
-#block-views-caucus_index-block_1 {
-	margin-top: 1em;
-}
-
-#block-views-caucus_index-block_1 h3 {
-	padding: 0;
 }
 
 /* @end */
@@ -833,7 +784,6 @@ tr.even, tr.odd {
 
 #forum th a {
 	color: #fff;
-	text-decoration: none;
 }
 
 #forum th .active img {
@@ -1080,6 +1030,111 @@ tr.even, tr.odd {
 
 /* @end */
 
+/* @group Blocks */
+
+.region-sidebar {
+	overflow: hidden;
+}
+
+.region-sidebar h3 {
+	border-bottom: 2px solid #BCBCBC;
+	padding-bottom: 0;
+	margin-bottom: .3em;
+}
+
+.region-sidebar h4 {
+	font-weight: normal;
+	font-family: Georgia;
+	padding: 0;
+	font-size: 1em;
+}
+
+.region-sidebar .block {
+	margin-bottom: 2em;
+}
+
+.region-sidebar .item-list ul {
+	font-size: 1em;
+}
+
+.region-sidebar .item-list ul li {
+	list-style: none;
+	margin: 0;
+	padding: 0 0 .7em;
+}
+
+.region-sidebar .views-field-created {
+	color: #919191;
+	font-size: .8em;
+	line-height: 1.4em;
+}
+
+.region-sidebar .views-field-created em {
+	font-family: Georgia;
+	font-style: italic;
+}
+
+.region p, .caucus-article-list-block {
+	color: #919191;
+	font-size: .8em;
+	line-height: 1.4em;
+	padding-bottom: .7em;
+}
+
+.region-caucus-index p {
+	font-size: .9em;
+	color: inherit;
+}
+
+.region li p {
+	padding-bottom: 0;
+}
+
+.region-sidebar article.caucus-topic {
+	padding: 0;
+	border: none;
+}
+
+.region-caucus-index article.caucus-topic {
+	margin: 0;
+	padding: 1em 0 .5em;
+	border-top: 2px solid #BCBCBC;
+}
+
+.region-caucus-index article.caucus-topic header {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+#block-views-caucus_index-block_1 {
+	margin-top: 1em;
+}
+
+#block-views-caucus_index-block_1 h3 {
+	padding: 0;
+}
+
+.caucus-topic header h4, #block-views-caucus_index-block_2 h4 {
+	font-size: .8em;
+	margin: 0;
+	padding: 0;
+	color: #919191;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.caucus-topic header h4 time {
+	color: #919191;
+}
+
+.view-display-id-block_2 h3 {
+	border-bottom: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* @end */
+
 /* @end */
 
 /* @group User pages */
@@ -1126,7 +1181,7 @@ tr.even, tr.odd {
 }
 
 .view-content h3 {
-	font-size: 1.1em !important;
+	padding-bottom: 0;
 }
 
 .profile .views-row .updated-date {

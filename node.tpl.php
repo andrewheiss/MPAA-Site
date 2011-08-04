@@ -59,13 +59,13 @@ if ($node->type == 'blog' || $node->type == 'news') {
 		<?php if ($show_links): ?>
 		<!-- AddThis Button BEGIN -->
 		<div class="addthis_toolbox addthis_default_style " style="padding-bottom: .5em;" addthis:url="<?php print $link; ?>" addthis:title="<?php print $title; ?>">
-		<a class="addthis_button_facebook"></a>
-		<a class="addthis_button_twitter"></a>
-		<a class="addthis_button_google_plusone" g:plusone:size="small" g:plusone:count="false" style="margin-top: -3px;"></a>
-		<a class="addthis_button_linkedin"></a>
-		<a class="addthis_button_googlereader"></a>
-		<a class="addthis_button_compact"></a>
-		<a class="addthis_counter addthis_bubble_style"></a>
+			<a class="addthis_button_google_plusone" g:plusone:size="small" g:plusone:count="false" style="margin-top: -3px;"></a>
+			<a class="addthis_button_facebook"></a>
+			<a class="addthis_button_twitter"></a>
+			<a class="addthis_button_linkedin"></a>
+			<a class="addthis_button_googlereader"></a>
+			<a class="addthis_button_compact"></a>
+			<a class="addthis_counter addthis_bubble_style"></a>
 		</div>
 		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e3a153960d60c98"></script>
 		<!-- AddThis Button END -->

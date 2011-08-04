@@ -27,7 +27,6 @@ stylesheets[all][]   = css/style.css
 stylesheets[all][]   = css/formalize.css
 stylesheets[all][]   = css/messages.css
 stylesheets[all][]   = css/block-editing.css
-stylesheets[all][]   = css/blocks.css
 stylesheets[all][]   = css/panels-styles.css
 stylesheets[all][]   = css/views-styles.css
 stylesheets[all][]   = css/nodes.css
@@ -48,6 +47,7 @@ stylesheets[all][]   = css/system-menus.css
 stylesheets[all][]   = css/navigation.css
 stylesheets[all][]   = css/comments.css
 stylesheets[all][]   = css/tabs.css
+stylesheets[all][]   = css/blocks.css
 
 ; stylesheets[handheld][] = css/mobile.css
 ; stylesheets[only screen and (max-device-width: 480px)][] = css/iphone.css
@@ -69,8 +69,7 @@ scripts[] = js/jquery.formalize.min.js
   ; To add a new region, copy Zen's page.tpl.php to your sub-theme's directory,
   ; add a line line to this file, and then add the new variable to your
   ; page.tpl.php template.
-regions[sidebar_first]  = First sidebar
-regions[sidebar_second] = Second sidebar
+regions[sidebar] 		= Sidebar
 regions[navigation]     = Navigation bar
 regions[highlight]      = Highlighted content
 regions[content_top]    = Content top

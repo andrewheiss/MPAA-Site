@@ -54,7 +54,7 @@
  */
 ?>
 
-<div id="<?php print $block_html_id; ?>" class="<?php print $classes; ?>">
+<div id="<?php print $block_html_id; ?>" class="column grid_4 <?php print $classes; ?>">
   <?php if ($title): ?>
     <h3 class="title"><?php print $title; ?></h3>
   <?php endif; ?>

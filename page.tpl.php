@@ -186,9 +186,7 @@
 				<?php print $caucus_index; ?>
 			</div>
 			<?php if ($show_sidebar): ?>
-			<div class="column grid_4">
-				<h2>And here's another column</h2>
-			</div>
+			<?php print $sidebar; ?>
 			<?php endif ?>
 		</section>
 		<?php } // End of front page/regular page check ?>

@@ -1,5 +1,3 @@
-<?php //dpm($fields); ?>
-
 <article class="caucus-topic">
 	<header>
 		<h4><time timestamp="<?php print format_date($fields['created']->raw, 'custom', 'Y-m-d'); ?>"><?php print $fields['created']->content; ?></time></h4>
