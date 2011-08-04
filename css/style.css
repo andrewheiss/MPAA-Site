@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?w
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?O
 */
 
 /* @group Sheet setup */
@@ -588,15 +588,19 @@ legend a {
 	font-style: italic;
 }
 
-.message {
-	font-size: .9em;
+.message-box {
+	font-size: .8em;
 	color: #ffffff;
 	padding: .4em 1em;
-	margin: 1em 0 1em;
-	background-color: #DE7C19;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+	margin: 0 0 1em;
+	background-color: #BCBCBC;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.orange {
+	background: #DE7C19;
 }
 
 /* @group Tabs */
@@ -762,6 +766,10 @@ article header em {
 	border-bottom: 1px solid #BCBCBC;
 }
 
+#caucus-description {
+	padding-top: .4em;
+}
+
 #caucus-description p {
 	font-family: Georgia;
 	font-size: 1.3em;
@@ -775,7 +783,7 @@ section.caucus-topic {
 
 article.caucus-topic {
 	margin: 0;
-	padding: .5em 0 0;
+	padding: 1em 0 .5em;
 	border-top: 2px solid #BCBCBC;
 }
 
@@ -947,7 +955,8 @@ tr.even, tr.odd {
 
 #comments article header, #comment-preview article header {
 	float: left;
-	width: 190px;
+	/*width: 190px;*/
+	width: 18%;
 	border: none;
 	margin: 0 0 0 10px;
 	font-size: .8em;
@@ -957,6 +966,7 @@ tr.even, tr.odd {
 
 #comments .comment-content, #comment-preview .comment-content {
 	float: left;
+	width: 75%;
 }
 
 #comments article:first-of-type {

@@ -70,6 +70,16 @@ function fix_spaces($path) {
 	return str_replace(' ', '%20', $path);
 }
 
+function add_and($string) {
+	$last = substr(strrchr($string, ","), 2);
+	$output = rtrim($string, $last) . ' and ' . $last;	
+	return $output;;
+}
+
+function add_and_2($string) {
+	return str_replace(',', ' and', $string);
+}
+
 /**
  * Implementation of HOOK_theme().
  */

@@ -9,7 +9,7 @@ if ($node->view) {
 	$show_links = true;
 }
 
-if ($node->type == 'blog') {
+if ($node->type == 'blog' || $node->type == 'news') {
 	$show_meta = TRUE;
 } elseif ($node->type == 'caucus_post') {
 	$show_meta = TRUE;
