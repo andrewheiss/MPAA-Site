@@ -148,18 +148,26 @@
 		</section>
 		
 		<?php 
-			if ($is_front) {
-				print $highlight;
-			} 
+		// Front page gets lots of blocks; no content
+		if ($is_front) {
+			print $highlight;
 		?>
 		
-		<?php
+		<section id="content-wrapper" class="row">
+			<div id="content" class="column grid_12">
+				<?php print $messages; ?>
+				<p>This is the front page. Stuff will go here eventually.</p>
+			</div>
+		</section>	
+			
+		<?php } else {
+			// Every other page… 
+			
 			if ($show_sidebar) {
 				$content_grid = 'grid_8';
 			} else {
 				$content_grid = 'grid_12';
-			}
-		?>
+			} ?>
 		
 		<section id="content-wrapper" class="row">
 			<div id="content" class="column <?php print $content_grid; ?>">
@@ -183,6 +191,7 @@
 			</div>
 			<?php endif ?>
 		</section>
+		<?php } // End of front page/regular page check ?>
 		
 		<section id="bottom" class="row">
 			<footer>
@@ -199,7 +208,9 @@
 		</section>
 	</div> <!-- End of #wrapper -->
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<?php if ($use_google_jquery): ?>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<?php endif ?>
 	<?php print $scripts; ?>
 	<?php print $page_closure; ?>
 	<?php print $closure; ?>

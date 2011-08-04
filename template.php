@@ -130,11 +130,17 @@ function forum_thread_icon_path() {
  */
 
 function mpaa_preprocess_page(&$vars, $hook) {
-	// Disable Drupal's jQuery since Google's CDN version is hardcoded in the template
-	$scripts = drupal_add_js();
-	unset($scripts['core']['misc/jquery.js']);
-	$vars['scripts'] = drupal_get_js('header', $scripts);
-
+	// Disable Drupal's jQuery since Google's CDN version is hardcoded in the template, but not on admin, edit, or add pages
+	$curr_uri = request_uri();
+	if (!strpos($curr_uri,'admin') > 0 && !strpos($curr_uri,'edit') > 0 && !strpos($curr_uri,'add') > 0) {
+		$scripts = drupal_add_js();
+		unset($scripts['core']['misc/jquery.js']);
+		$vars['scripts'] = drupal_get_js('header', $scripts);
+		$vars['use_google_jquery'] = TRUE;
+	} else {
+		$vars['use_google_jquery'] = FALSE;
+	}
+	
 	// Strip duplicate head charset metatag
 	$matches = array();
 	  preg_match_all('/(<meta http-equiv=\"Content-Type\"[^>]*>)/', $vars['head'], $matches);
