@@ -188,6 +188,9 @@ function mpaa_preprocess_page(&$vars, $hook) {
 		$vars['show_login'] = TRUE;
 	}
 
+	// $menu = menu_navigation_links("primary-links");
+	// $vars['footer_menu_primary'] = theme('links', $menu);
+
 }
 
 
@@ -202,13 +205,13 @@ function mpaa_preprocess_page(&$vars, $hook) {
 /* -- Delete this line if you want to use this function
 function mpaa_preprocess_node(&$vars, $hook) {
   $vars['sample_variable'] = t('Lorem ipsum.');
-
-  // Optionally, run node-type-specific preprocess functions, like
-  // mpaa_preprocess_node_page() or mpaa_preprocess_node_story().
-  $function = __FUNCTION__ . '_' . $vars['node']->type;
-  if (function_exists($function)) {
-    $function($vars, $hook);
-  }
+  
+   // Optionally, run node-type-specific preprocess functions, like
+   // mpaa_preprocess_node_page() or mpaa_preprocess_node_story().
+   $function = __FUNCTION__ . '_' . $vars['node']->type;
+   if (function_exists($function)) {
+     $function($vars, $hook);
+   }
 }
 // */
 
@@ -234,9 +237,13 @@ function mpaa_preprocess_comment(&$vars, $hook) {
  * @param $hook
  *   The name of the template being rendered ("block" in this case.)
  */
-/* -- Delete this line if you want to use this function
+
 function mpaa_preprocess_block(&$vars, $hook) {
-  $vars['sample_variable'] = t('Lorem ipsum.');
+	// Determine if the block is merely a container for a node
+	$node_in_block = strpos($vars['block']->content, 'node-type-page');
+	if ($node_in_block) {
+		$vars['node_in_block'] = TRUE;
+	}	
 }
 // */
 

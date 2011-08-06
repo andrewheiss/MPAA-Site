@@ -53,6 +53,13 @@
  * @see zen_process()
  */
 ?>
+<?php if ($node_in_block): ?>
+<?php // If the block is only a container for a node, it doesn't need to be a full block—only print the content in a column div. Otherwise, print a full block. ?>
+<div class="column grid_8">
+	<?php print $content; ?>
+</div>
+
+<?php else: ?>
 
 <div id="<?php print $block_html_id; ?>" class="column grid_4 <?php print $classes; ?>">
   <?php if ($title): ?>
@@ -65,3 +72,5 @@
 
   <?php print $edit_links; ?>
 </div><!-- /.block -->
+
+<?php endif ?>

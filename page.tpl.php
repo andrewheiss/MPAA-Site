@@ -116,6 +116,9 @@
 	<!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	<!--[if lte IE 6]>
+	<script type="text/javascript" src="<?php print $GLOBALS['base_url'] ."/"; print $directory; ?>/js/suckerfish.js"></script>
+	<![endif]-->
 </head>
 <body class="<?php print $classes; ?>">
 	<div id="wrapper">
@@ -130,7 +133,7 @@
 		
 		<section id="nav-wrapper" class="row">
 			<nav id="primary" class="column grid_8">
-				<?php print theme('links', $primary_links, array('class' => 'primary-links')); //menu_tree($menu_name = 'primary-links'); ?>
+				<?php print $navigation; ?>
 			</nav>
 			<div id="search-box" class="column grid_4">
 				<?php if ($show_login): ?>
@@ -154,10 +157,14 @@
 		?>
 		
 		<section id="content-wrapper" class="row">
-			<div id="content" class="column grid_12">
+			<div id="content">
 				<?php print $messages; ?>
-				<p>This is the front page. Stuff will go here eventually.</p>
+				<?php print $front_message; ?>
 			</div>
+		</section>
+		
+		<section class="region-sidebar front-rows row">
+			<?php print $front_row; ?>
 		</section>	
 			
 		<?php } else {
@@ -193,15 +200,18 @@
 		
 		<section id="bottom" class="row">
 			<footer>
-				<div class="column grid_4">
-					<h3>Big footer thing</h3>
-				</div>
-				<div class="column grid_4">
-					<h3>Big footer thing</h3>
-				</div>
-				<div class="column grid_4">
-					<h3>Big footer thing</h3>
-				</div>
+				<?php
+				// print $footer_menu_primary;
+				// print theme('links', $primary_links);
+				// $menu = menu_navigation_links("primary-links");
+				// 			  return theme('links', $menu);
+				// foreach(menu_navigation_links("primary-links", 1) as $m):
+				// 				  $arrNav[] = l($m['title'], $m['href']);
+				// 				endforeach;
+				// 				echo implode(" | ", $arrNav);
+				?>
+				<?php print $footer; ?>
+				
 			</footer>
 		</section>
 	</div> <!-- End of #wrapper -->

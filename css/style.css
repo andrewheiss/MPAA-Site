@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?c
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?g
 */
 
 /* @group Sheet setup */
@@ -438,6 +438,10 @@ legend {
 #primary li {
 	list-style: none;
 	display: inline;
+	float: left;
+	margin: 0;
+	padding: 0 6px;
+	margin: 0 3px;
 }
 
 #primary li img {
@@ -445,8 +449,6 @@ legend {
 }
 
 #primary li a {
-	margin: 0 3px;
-	padding: 0 3px;
 	text-decoration: none;
 	color: #fefefe;
 	text-shadow: 0px 2px 2px rgba(0,0,0,.8);
@@ -454,6 +456,7 @@ legend {
 	width: auto;
 	opacity: .7;
 	line-height: 45px;
+	display: block;
 }
 
 #primary li.first a {
@@ -464,6 +467,62 @@ legend {
 	opacity: 1;
 	text-shadow: 0px 0px 20px rgba(255, 255, 255, .6), 0px 2px 2px rgba(0,0,0,.8);  
 }
+
+/* @group Suckerfish menu */
+
+/* Second-level lists */ 
+
+#primary ul.menu ul {
+	margin-left: -10px;
+	background: #283C5D;
+	opacity: .95;
+}
+
+#primary ul.menu li ul {
+	position: absolute;
+	width: 200px;
+	left: -999em; /* to hide menus because display: none isn't read by screen readers */
+	border: 2px solid #BCBCBC;
+	z-index: 10;
+}
+
+#primary ul.menu li li {
+	float: left;
+	width: 200px;
+	margin-bottom: 1px;
+}
+
+#primary ul.menu li ul a {
+	width: 200px;
+	line-height: 30px;
+}
+
+/* Third-level lists */
+#primary ul.menu li ul ul {
+	margin: -32px 0px 0px 191px;
+}
+
+/* Suckerfish magic */
+#primary ul.menu li:hover ul ul, #primary ul.menu li:hover ul ul ul, #primary ul.menu li.sfhover ul ul, #primary ul.menu li.sfhover ul ul ul {
+	left: -999em;
+}
+
+#primary ul.menu li:hover ul, #primary ul.menu li li:hover ul, #primary ul.menu li li li:hover ul, #primary ul.menu li.sfhover ul, #primary ul.menu li li.sfhover ul, #primary ul.menu li li li.sfhover ul {
+	left: auto;
+}
+
+#primary li.expanded > a {
+  background: url(../images/arrow-down.png) no-repeat 94%;
+  padding-right: 21px;
+  margin-right: -10px;
+}
+
+#primary li li.expanded > a {
+  background: url(../images/arrow-right.png) no-repeat 94%;
+  padding-right: 0;
+}
+
+/* @end */
 
 .login-button {
 	float: right;
@@ -599,6 +658,18 @@ legend {
 	background: #DE7C19;
 }
 
+.item-list .pager {
+	border-top: 1px solid #BCBCBC;
+	border-bottom: 1px solid #BCBCBC;
+	font-size: .7em;
+	padding: .3em 0;
+	text-transform: uppercase;
+}
+
+.item-list .pager li {
+	margin-left: 1em;
+}
+
 /* @group Tabs */
 
 ul.primary, ul.secondary {
@@ -688,6 +759,8 @@ a:hover {
 
 /* @group Article */
 
+
+
 .post article header {
 	border-bottom: 2px solid #BCBCBC;
 	margin-bottom: 1em;
@@ -720,7 +793,7 @@ a:hover {
 }
 
 .view-content .post {
-	margin-bottom: 2em;
+	margin-bottom: 1.5em;
 }
 
 .comment_count {
@@ -753,6 +826,33 @@ article header em, {
 section.caucus-topic {
 	margin-bottom: .8em;
 	border-bottom: 4px solid #BCBCBC;
+}
+
+.page-views ul.footnotes {
+	display: none !important;
+}
+
+article footer {
+	overflow: hidden;
+}
+
+.addthis_toolbox {
+	float: right;
+}
+
+article footer #tags {
+	float: left;
+	font-size: .8em;
+}
+
+article footer #tags ul {
+	margin: 0;
+	padding: 0;
+}
+
+article footer #tags li {
+	display: inline;
+	margin-right: .8em;
 }
 
 /* @end */
@@ -1032,17 +1132,31 @@ tr.even, tr.odd {
 
 /* @group Blocks */
 
-.region-sidebar {
+.region-front-message {
+	border-bottom: 1px solid #BCBCBC;
+	padding-bottom: 1em;
+}
+
+.front-rows {
+	background-color: #fff;
+}
+
+.front-rows h3 {
+	font-size: 1.5em;
+}
+
+.region {
 	overflow: hidden;
 }
 
-.region-sidebar h3 {
+.block h3 {
 	border-bottom: 2px solid #BCBCBC;
 	padding-bottom: 0;
 	margin-bottom: .3em;
+	color: #919191;
 }
 
-.region-sidebar h4 {
+.block h4 {
 	font-weight: normal;
 	font-family: Georgia;
 	padding: 0;
@@ -1053,28 +1167,32 @@ tr.even, tr.odd {
 	margin-bottom: 2em;
 }
 
-.region-sidebar .item-list ul {
+.block .item-list ul {
 	font-size: 1em;
 }
 
-.region-sidebar .item-list ul li {
+.block .item-list ul li {
 	list-style: none;
 	margin: 0;
 	padding: 0 0 .7em;
 }
 
-.region-sidebar .views-field-created {
+.block .views-field-created, .view-comments-recent .views-field-name, .view-comments-recent .views-field-timestamp {
 	color: #919191;
 	font-size: .8em;
 	line-height: 1.4em;
 }
 
-.region-sidebar .views-field-created em {
+.block .views-field-created em, .view-comments-recent em {
 	font-family: Georgia;
 	font-style: italic;
 }
 
-.region p, .caucus-article-list-block {
+.view-comments-recent .views-field-timestamp {
+	margin-bottom: .4em;
+}
+
+.block p, .caucus-article-list-block {
 	color: #919191;
 	font-size: .8em;
 	line-height: 1.4em;
@@ -1086,22 +1204,22 @@ tr.even, tr.odd {
 	color: inherit;
 }
 
-.region li p {
+.block li p {
 	padding-bottom: 0;
 }
 
-.region-sidebar article.caucus-topic {
+.view-caucus-index article.caucus-topic {
 	padding: 0;
 	border: none;
 }
 
-.region-caucus-index article.caucus-topic {
+.view-caucus-index article.caucus-topic {
 	margin: 0;
 	padding: 1em 0 .5em;
 	border-top: 2px solid #BCBCBC;
 }
 
-.region-caucus-index article.caucus-topic header {
+.view-caucus-index article.caucus-topic header {
 	border-bottom: none;
 	margin-bottom: 0;
 }
@@ -1112,6 +1230,7 @@ tr.even, tr.odd {
 
 #block-views-caucus_index-block_1 h3 {
 	padding: 0;
+	border-bottom: none;
 }
 
 .caucus-topic header h4, #block-views-caucus_index-block_2 h4 {
@@ -1131,6 +1250,20 @@ tr.even, tr.odd {
 	border-bottom: none;
 	margin: 0;
 	padding: 0;
+	font-size: 1em;
+	line-height: 1.4em;
+}
+
+#block-views-tags_list-block_1 ul {
+	overflow: hidden;
+}
+
+#block-views-tags_list-block_1 ul li {
+	display: block;
+	float: left;
+	margin-right: 1em;
+	font-size: .8em;
+	padding-bottom: .5em;
 }
 
 /* @end */
@@ -1202,8 +1335,52 @@ tr.even, tr.odd {
 /* @group Bottom */
 
 #bottom {
-	background-color: #ffffff;
+	background-color: #283C5D;
+	color: #ffffff;
 	border-top: 2px solid #BCBCBC;
+	-webkit-box-shadow: inset 0px 0px 5px 2px #212121;
+	-moz-box-shadow: inset 0px 0px 2px 2px #212121;
+	box-shadow: inset 0px 0px 2px 2px #212121;
+}
+
+#bottom a {
+	color: #ffffff;
+}
+
+#bottom footer .menu {
+	overflow: hidden;
+	height: 100px;
+}
+
+#bottom footer ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	font-size: .9em;
+}
+
+#bottom footer li {
+	font-weight: bold;
+	float: left;
+	margin-right: 1em;
+	width: 100px;
+}
+
+#bottom footer li ul {
+	font-size: inherit;
+	position: absolute;
+}
+
+#bottom footer li li {
+	font-weight: normal;
+	clear: both;
+	margin-right: 0;
+}
+
+#bottom footer li ul li ul {
+	/*padding-left: 1em;*/
+	font-size: inherit;
+
 }
 
 /* @end */

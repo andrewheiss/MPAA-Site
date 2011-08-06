@@ -69,15 +69,15 @@ scripts[] = js/jquery.formalize.min.js
   ; To add a new region, copy Zen's page.tpl.php to your sub-theme's directory,
   ; add a line line to this file, and then add the new variable to your
   ; page.tpl.php template.
+regions[navigation]		= Navigation
 regions[sidebar] 		= Sidebar
-regions[navigation]     = Navigation bar
 regions[highlight]      = Highlighted content
-regions[content_top]    = Content top
-regions[content_bottom] = Content bottom
-regions[header]         = Header
+regions[front_message]	= Front message
+regions[front_row]		= Front page
+regions[caucus_index]	= Caucus index
 regions[footer]         = Footer
 regions[page_closure]   = Page closure
-regions[caucus_index]	= Caucus index
+
 
   ; Various page elements output by the theme can be toggled on and off. The
   ; "features" control which of these check boxes display on the

@@ -1,12 +1,18 @@
 <?php
+// Set up node template variables
+$print_title_link = true;
+$heading_tag = 'h2';
+$show_links = true;
+$pubdate = '';
+
 if ($node->view) {
 	$heading_tag = 'h3';
-	$pubdate = '';
 	$show_links = false;
+} elseif ($is_front) {
+	$show_links = false;
+	$print_title_link = false;
 } else {
-	$heading_tag = 'h2';
 	$pubdate = ' pubdate';
-	$show_links = true;
 	$path = isset($_GET['q']) ? $_GET['q'] : '<front>';
 	$link = url($path, array('absolute' => TRUE));
 }
@@ -38,13 +44,19 @@ if ($node->type == 'blog' || $node->type == 'news') {
 }
 
 ?>
-<section class="post <?php print $classes; ?>">
+<section class="post clear-block <?php print $classes; ?>">
 	<?php if ($is_caucus): ?>
 		<div class="small-banner"><?php print $banner; ?></div>
 	<?php endif ?>
 	<article>
 		<header>
-			<<?php print $heading_tag; ?> class="title"><a href="<?php print $node_url; ?>"><?php print $title; ?></a></<?php print $heading_tag; ?>>
+			<<?php print $heading_tag; ?> class="title">
+			<?php if ($print_title_link): ?>
+				<a href="<?php print $node_url; ?>"><?php print $title; ?></a>
+			<?php else: ?>
+				<?php print $title; ?>
+			<?php endif ?>
+			</<?php print $heading_tag; ?>>
 			<?php if ($show_meta): ?>
 			<?php if ($is_caucus) {
 				print $author_img;
@@ -56,20 +68,25 @@ if ($node->type == 'blog' || $node->type == 'news') {
 		</header>
 		<?php print $content; ?>
 		
-		<?php if ($show_links): ?>
-		<!-- AddThis Button BEGIN -->
-		<div class="addthis_toolbox addthis_default_style " style="padding-bottom: .5em;" addthis:url="<?php print $link; ?>" addthis:title="<?php print $title; ?>">
-			<a class="addthis_button_google_plusone" g:plusone:size="small" g:plusone:count="false" style="margin-top: -3px;"></a>
-			<a class="addthis_button_facebook"></a>
-			<a class="addthis_button_twitter"></a>
-			<a class="addthis_button_linkedin"></a>
-			<a class="addthis_button_googlereader"></a>
-			<a class="addthis_button_compact"></a>
-			<a class="addthis_counter addthis_bubble_style"></a>
-		</div>
-		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e3a153960d60c98"></script>
-		<!-- AddThis Button END -->
-		<?php endif ?>
+		<footer>
+			<?php if ($show_links): ?>
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style " style="padding-bottom: .5em;" addthis:url="<?php print $link; ?>" addthis:title="<?php print $title; ?>">
+				<a class="addthis_button_google_plusone" g:plusone:size="small" g:plusone:count="false" style="margin-top: -3px;"></a>
+				<a class="addthis_button_facebook"></a>
+				<a class="addthis_button_twitter"></a>
+				<a class="addthis_button_linkedin"></a>
+				<a class="addthis_button_googlereader"></a>
+				<a class="addthis_button_compact"></a>
+				<a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+			<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4e3a153960d60c98"></script>
+			<!-- AddThis Button END -->
+			<?php endif ?>
+			<?php if ($taxonomy) { ?>
+		      <div id="tags"><?php echo $terms ?></div>
+		    <?php } ?>
+		</footer>
 	</article>
 </section>
 
