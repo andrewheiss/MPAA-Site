@@ -11,6 +11,13 @@
  * under: admin / settings / performance.
  */
 
+#primary li a:hover, .login-button a:hover {
+    text-decoration: underline;
+}
+
+#primary .active, #primary .active-trail a {
+    font-weight: bold;
+}
 
 /*
  * Tabs

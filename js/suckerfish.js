@@ -1,5 +1,5 @@
 sfHover = function() {
-	var sfEls = document.getElementById("suckerfishmenu").getElementsByTagName("LI");
+	var sfEls = document.getElementById("primary").getElementsByTagName("LI");
 	for (var i=0; i<sfEls.length; i++) {
 		sfEls[i].onmouseover=function() {
 			this.className+=" sfhover";

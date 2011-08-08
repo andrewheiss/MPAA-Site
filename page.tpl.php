@@ -116,11 +116,11 @@
 	<!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	<!--[if lte IE 6]>
-	<script type="text/javascript" src="<?php print $GLOBALS['base_url'] ."/"; print $directory; ?>/js/suckerfish.js"></script>
-	<![endif]-->
 </head>
 <body class="<?php print $classes; ?>">
+	<!--[if lte IE 6]>
+		<div class="message-box orange" style="text-align: center;"><p><b>NOTICE</b><br /> Because you are using a very old version of Internet Explorer, this site will not work perfectly. <br />Please consider upgrading to a newer version or using a different browser.</p></div>
+	<![endif]-->
 	<div id="wrapper">
 		<section id="top" class="row">
 			<header class="column grid_9">
@@ -200,18 +200,7 @@
 		
 		<section id="bottom" class="row">
 			<footer>
-				<?php
-				// print $footer_menu_primary;
-				// print theme('links', $primary_links);
-				// $menu = menu_navigation_links("primary-links");
-				// 			  return theme('links', $menu);
-				// foreach(menu_navigation_links("primary-links", 1) as $m):
-				// 				  $arrNav[] = l($m['title'], $m['href']);
-				// 				endforeach;
-				// 				echo implode(" | ", $arrNav);
-				?>
-				<?php print $footer; ?>
-				
+				<?php print $footer; ?>				
 			</footer>
 		</section>
 	</div> <!-- End of #wrapper -->
@@ -219,7 +208,13 @@
 	<?php if ($use_google_jquery): ?>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<?php endif ?>
+	
 	<?php print $scripts; ?>
+	
+	<!--[if IE 6]>
+		<script type="text/javascript" src="<?php print $GLOBALS['base_url'] ."/"; print $directory; ?>/js/suckerfish.js"></script>
+	<![endif]-->
+	
 	<?php print $page_closure; ?>
 	<?php print $closure; ?>
 </body>

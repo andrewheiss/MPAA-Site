@@ -10,9 +10,9 @@
  * Layout CSS
  */
 
-body {
+/*body {
   text-align: center; /* 1st part of IE5/IE6quirks centering hack */
-}
+}*/
 
 #page {
   text-align: left; /* LTR */ /* 2nd part of IE5/IE6quirks centering hack */

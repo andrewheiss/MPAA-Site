@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?g
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?x
 */
 
 /* @group Sheet setup */
@@ -21,8 +21,8 @@ Colors:
 
 /*
 Font families: 
-	Serif: "Times New Roman", serif
-	Sans: Verdana, sans-serif
+	Serif: Georgia, "Times New Roman", Times, serif
+	Sans: Verdana, Geneva, sans-serif
 */
 
 /* @group Fonts */
@@ -144,9 +144,9 @@ table {
 	background-color: #BCBCBC;
 	margin: 25px auto;
 	padding: 5px 0;
-	-webkit-box-shadow: 0px 1px 10px 3px #1c1c1c;
-	-moz-box-shadow: 0px 1px 10px 3px #1c1c1c;
-	box-shadow: 0px 1px 10px 3px #1c1c1c;
+	-webkit-box-shadow: 0 1px 10px 3px #1c1c1c;
+	-moz-box-shadow: 0 1px 10px 3px #1c1c1c;
+	box-shadow: 0 1px 10px 3px #1c1c1c;
 }
 
 /*
@@ -179,7 +179,7 @@ table {
 /* @group Globals */
 
 body {
-	font: 100%/1.4em "Verdana", sans-serif;
+	font: 100%/1.4em Verdana, Geneva, sans-serif;
 	color: #000000;
 	background: url(../images/blue-fibers.png) repeat;
 }
@@ -187,7 +187,7 @@ body {
 h1 {
 	font-size: 2.5em;
 	line-height: 1.2em;
-	font-family: Georgia;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	font-weight: bold;
 }
 
@@ -197,13 +197,13 @@ h2 {
 	font-weight: bold;
 	color: #283C5D;
 	padding-bottom: .4em;
-	font-family: Georgia;
+	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 h3 {
 	font-size: 1.3em;
 	line-height: 1.4em;
-	font-family: Georgia;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	padding: .2em 0;
 }
 
@@ -311,7 +311,7 @@ abbr, acronym {
 }
 
 blockquote {
-	font-family: Georgia;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 1.1em;
     padding: 0 60px;
 	color: #919191;
@@ -363,6 +363,36 @@ legend {
 	color: #919191;
 }
 
+.message-box {
+	font-size: .8em !important;
+	color: #ffffff !important;
+	padding: .4em 1em;
+	margin: 0 0 1em;
+	background-color: #BCBCBC;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.orange {
+	background: #DE7C19;
+}
+
+.textarea-identifier { /* CKEditor identifier labels */
+	font-size: .7em;
+	font-style: italic;
+}
+
+a {
+	color: #33496B;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #DE7C19;
+	text-decoration: underline;
+}
+
 /* @end */
 
 /* @group Top */
@@ -385,42 +415,17 @@ legend {
 
 /* @group Nav */
 
-#search-box {
-	padding: 10px 5px;
-	width: 320px;
-}
-
-#search-box input {
-	width: 160px;
-	float: right;
-	margin-left: 10px;
-}
-
-#search-box p {
-	padding: .5em 0 .3em;
-	font-size: .7em;
-	color: #888;
-}
-
-.social-icons {
-	float: right;
-}
-
-.social-icons li {
-	list-style-image: none;
-	float: left;
-	margin: 3px 4px 0 0;
-}
-
 #nav-wrapper {
 	background-color: #283C5D;
 	color: #ffffff;
 	border-top: 2px solid #BCBCBC;
 	border-bottom: 2px solid #BCBCBC;
-	-webkit-box-shadow: inset 0px 0px 5px 2px #212121;
-	-moz-box-shadow: inset 0px 0px 2px 2px #212121;
-	box-shadow: inset 0px 0px 2px 2px #212121;
+	-webkit-box-shadow: inset 0 0 5px 2px #212121;
+	-moz-box-shadow: inset 0 0 2px 2px #212121;
+	box-shadow: inset 0 0 2px 2px #212121;
 }
+
+/* @group Primary links menu */
 
 #nav-wrapper ul, #nav-wrapper ol {
 	list-style: none;
@@ -433,6 +438,10 @@ legend {
 	padding: 0 ;
 	font-size: .9em;
 	text-transform: uppercase;
+}
+
+#primary ul {
+	overflow: hidden;
 }
 
 #primary li {
@@ -451,7 +460,7 @@ legend {
 #primary li a {
 	text-decoration: none;
 	color: #fefefe;
-	text-shadow: 0px 2px 2px rgba(0,0,0,.8);
+	text-shadow: 0 2px 2px rgba(0,0,0,.8);
 	opacity: .9;
 	width: auto;
 	opacity: .7;
@@ -465,7 +474,7 @@ legend {
 
 #primary li a:hover, #primary .active, #primary .active-trail a, .login-button a:hover {
 	opacity: 1;
-	text-shadow: 0px 0px 20px rgba(255, 255, 255, .6), 0px 2px 2px rgba(0,0,0,.8);  
+	text-shadow: 0 0 20px rgba(255, 255, 255, .6), 0 2px 2px rgba(0,0,0,.8);  
 }
 
 /* @group Suckerfish menu */
@@ -499,7 +508,7 @@ legend {
 
 /* Third-level lists */
 #primary ul.menu li ul ul {
-	margin: -32px 0px 0px 191px;
+	margin: -32px 0 0 191px;
 }
 
 /* Suckerfish magic */
@@ -524,6 +533,37 @@ legend {
 
 /* @end */
 
+/* @end */
+
+/* @group Search box */
+
+#search-box {
+	padding: 10px 5px;
+	width: 320px;
+}
+
+#search-box input {
+	width: 140px;
+	float: right;
+	margin-left: 10px;
+}
+
+#search-box p {
+	padding: .5em 0 .3em;
+	font-size: .7em;
+	color: #888;
+}
+
+.social-icons {
+	float: right;
+}
+
+.social-icons li {
+	list-style-image: none;
+	float: left;
+	margin: 3px 4px 0 0;
+}
+
 .login-button {
 	float: right;
 }
@@ -533,10 +573,12 @@ legend {
 	text-decoration: none;
 	font-size: .6em;
 	text-transform: uppercase;
-	text-shadow: 0px 2px 2px rgba(0,0,0,.8);
+	text-shadow: 0 2px 2px rgba(0,0,0,.8);
 	opacity: .9;
 	margin-left: 1em;
 }
+
+/* @end */
 
 /* @end */
 
@@ -561,9 +603,9 @@ legend {
 	background-color: #405679;
 	border: 2px solid #283C5D;
 	width: 326px;
-	-webkit-box-shadow: 0px 5px 5px 1px #666666;
-	-moz-box-shadow: 0px 5px 5px 1px #666666;
-	box-shadow: 0px 5px 5px 1px #666666;
+	-webkit-box-shadow: 0 5px 5px 1px #666666;
+	-moz-box-shadow: 0 5px 5px 1px #666666;
+	box-shadow: 0 5px 5px 1px #666666;
 	height: 246px; /* 250px - 4 (top and bottom borders) */
 	color: #ffffff;
 }
@@ -597,9 +639,9 @@ legend {
 }
 
 #highlight figure {
-	-webkit-box-shadow: 0px 5px 5px 1px #666666;
-	-moz-box-shadow: 0px 5px 5px 1px #666666;
-	box-shadow: 0px 5px 5px 1px #666666;
+	-webkit-box-shadow: 0 5px 5px 1px #666666;
+	-moz-box-shadow: 0 5px 5px 1px #666666;
+	box-shadow: 0 5px 5px 1px #666666;
 }
 
 #views_slideshow_singleframe_pager_front_highlight-block_1 {
@@ -611,6 +653,7 @@ legend {
 	height: 1.5em;
 	line-height: 1.5em;
 	font-size: .7em;
+	background: #919191;
 	background: -moz-linear-gradient(left, rgba(127,127,127,0) 0%, rgba(127,127,127,1) 15%, rgba(127,127,127,1) 85%, rgba(127,127,127,0) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(127,127,127,0)), color-stop(15%,rgba(127,127,127,1)), color-stop(85%,rgba(127,127,127,1)), color-stop(100%,rgba(127,127,127,0))); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(left, rgba(127,127,127,0) 0%,rgba(127,127,127,1) 15%,rgba(127,127,127,1) 85%,rgba(127,127,127,0) 100%); /* Chrome10+,Safari5.1+ */
@@ -626,7 +669,7 @@ legend {
 
 #highlight .activeSlide a {
 	font-weight: bold;
-	text-shadow: 0px 0px 4px rgba(255, 255, 255, 1);
+	text-shadow: 0 0 4px rgba(255, 255, 255, 1);
 }
 
 /* @end */
@@ -636,26 +679,6 @@ legend {
 #content-wrapper {
 	background-color: #ffffff;
 	padding: 15px 0;
-}
-
-.textarea-identifier {
-	font-size: .7em;
-	font-style: italic;
-}
-
-.message-box {
-	font-size: .8em !important;
-	color: #ffffff !important;
-	padding: .4em 1em;
-	margin: 0 0 1em;
-	background-color: #BCBCBC;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
-
-.orange {
-	background: #DE7C19;
 }
 
 .item-list .pager {
@@ -738,15 +761,7 @@ ul.primary li.active a:hover, ul.secondary li.active a:hover {
 
 /* @end */
 
-a {
-	color: #33496B;
-	text-decoration: none;
-}
-
-a:hover {
-	color: #DE7C19;
-	text-decoration: underline;
-}
+/* @group Content */
 
 #content h2 {
 	font-size: 2em;
@@ -756,10 +771,6 @@ a:hover {
 #content h3 {
 	font-size: 1.4em;
 }
-
-/* @group Article */
-
-
 
 .post article header {
 	border-bottom: 2px solid #BCBCBC;
@@ -800,9 +811,9 @@ a:hover {
 	float: right;
 }
 
-article header em, {
+article header em {
 	color: #919191;
-	font-family: Georgia;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	font-style: italic;
 	font-size: 1.1em;
 }
@@ -818,7 +829,7 @@ article header em, {
 }
 
 #caucus-description p {
-	font-family: Georgia;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 1.3em;
 	color: #919191;
 }
@@ -1158,7 +1169,7 @@ tr.even, tr.odd {
 
 .block h4 {
 	font-weight: normal;
-	font-family: Georgia;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	padding: 0;
 	font-size: 1em;
 }
@@ -1184,7 +1195,7 @@ tr.even, tr.odd {
 }
 
 .block .views-field-created em, .view-comments-recent em {
-	font-family: Georgia;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	font-style: italic;
 }
 
@@ -1305,7 +1316,7 @@ tr.even, tr.odd {
 }
 
 .profile .views-row .views-field-timestamp em {
-	font-family: Georgia;
+	font-family: Georgia, "Times New Roman", Times, serif;
 	font-style: italic;
 }
 
@@ -1335,52 +1346,22 @@ tr.even, tr.odd {
 /* @group Bottom */
 
 #bottom {
+	text-align: center;
+	padding: .7em 0 .7em;
 	background-color: #283C5D;
 	color: #ffffff;
 	border-top: 2px solid #BCBCBC;
-	-webkit-box-shadow: inset 0px 0px 5px 2px #212121;
-	-moz-box-shadow: inset 0px 0px 2px 2px #212121;
-	box-shadow: inset 0px 0px 2px 2px #212121;
+	-webkit-box-shadow: inset 0 0 5px 2px #212121;
+	-moz-box-shadow: inset 0 0 2px 2px #212121;
+	box-shadow: inset 0 0 2px 2px #212121;
 }
 
 #bottom a {
 	color: #ffffff;
 }
 
-#bottom footer .menu {
-	overflow: hidden;
-	height: 100px;
+#bottom footer p {
+	font-size: .7em;
+	padding-bottom: 0;
 }
-
-#bottom footer ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-	font-size: .9em;
-}
-
-#bottom footer li {
-	font-weight: bold;
-	float: left;
-	margin-right: 1em;
-	width: 100px;
-}
-
-#bottom footer li ul {
-	font-size: inherit;
-	position: absolute;
-}
-
-#bottom footer li li {
-	font-weight: normal;
-	clear: both;
-	margin-right: 0;
-}
-
-#bottom footer li ul li ul {
-	/*padding-left: 1em;*/
-	font-size: inherit;
-
-}
-
 /* @end */
