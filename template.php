@@ -93,8 +93,8 @@ function mpaa_theme(&$existing, $type, $theme, $path) {
 
   $hooks['comment_form'] = array ('arguments' => array('form' => NULL));
 
-  $hooks['user_login'] = array ('template' => 'user-login', 'arguments' => array('form' => NULL));
-  $hooks['user_register'] = array ('template' => 'user-register', 'arguments' => array('form' => NULL));
+  // $hooks['user_login'] = array ('template' => 'user-login', 'arguments' => array('form' => NULL));
+  // $hooks['user_register'] = array ('template' => 'user-register', 'arguments' => array('form' => NULL));
 	
   return $hooks;
 }
