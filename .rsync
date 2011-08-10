@@ -1,0 +1,6 @@
+.rsync
+.git
+.git/*
+.gitignore
+.DS_Store
+Rakefile
