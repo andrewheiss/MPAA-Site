@@ -136,9 +136,6 @@
 				<?php print $navigation; ?>
 			</nav>
 			<div id="search-box" class="column grid_4">
-				<?php if ($show_login): ?>
-				<span class="login-button"><a href="/user/login">Log in</a></span>
-				<?php endif ?>
 				<input type="search" name="search" value="" placeholder="Search&hellip;" />
 				<ul class="social-icons">
 					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/facebook.png" alt="Facebook" /></a></li>
@@ -200,7 +197,14 @@
 		
 		<section id="bottom" class="row">
 			<footer>
-				<?php print $footer; ?>				
+				<?php print $footer; ?>
+				<p id="login-logout">
+				<?php if ($show_login): ?>
+				<a href="/user/login">Log in</a>
+				<?php else: ?>
+				<a href="/admin">Site administration</a> &bull; <a href="/logout">Log out</a>	
+				<?php endif ?>
+				</p>	
 			</footer>
 		</section>
 	</div> <!-- End of #wrapper -->

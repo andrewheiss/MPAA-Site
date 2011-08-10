@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?x
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?j
 */
 
 /* @group Sheet setup */
@@ -543,7 +543,7 @@ a:hover {
 }
 
 #search-box input {
-	width: 140px;
+	width: 180px;
 	float: right;
 	margin-left: 10px;
 }
@@ -562,20 +562,6 @@ a:hover {
 	list-style-image: none;
 	float: left;
 	margin: 3px 4px 0 0;
-}
-
-.login-button {
-	float: right;
-}
-
-.login-button a {
-	color: #fff;
-	text-decoration: none;
-	font-size: .6em;
-	text-transform: uppercase;
-	text-shadow: 0 2px 2px rgba(0,0,0,.8);
-	opacity: .9;
-	margin-left: 1em;
 }
 
 /* @end */
@@ -1362,6 +1348,8 @@ tr.even, tr.odd {
 
 #bottom footer p {
 	font-size: .7em;
+	line-height: 1.4em;
 	padding-bottom: 0;
 }
+
 /* @end */
