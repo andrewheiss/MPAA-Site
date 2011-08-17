@@ -136,7 +136,11 @@
 				<?php print $navigation; ?>
 			</nav>
 			<div id="search-box" class="column grid_4">
-				<input type="search" name="search" value="" placeholder="Search&hellip;" />
+				<form method="get" action="http://www.google.com/search"> 
+					<input type="search" name="q" id="search-field" value="" placeholder="Search&hellip;" />
+					<input type="hidden" name="sitesearch" value="mpaa.byu.edu" /> 
+				</form>
+				
 				<ul class="social-icons">
 					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/facebook.png" alt="Facebook" /></a></li>
 					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/twitter.png" alt="Twitter" /></a></li>
