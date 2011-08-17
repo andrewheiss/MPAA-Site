@@ -113,6 +113,8 @@
 	<title><?php print $head_title; ?></title>
 	<?php print $head; ?>
 	<?php print $styles; ?>
+	<link rel="alternate" type="application/atom+xml" title="MPAA blog posts" href="<?php print $GLOBALS[base_url]; ?>/rss/blog" />
+	<link rel="alternate" type="application/atom+xml" title="The Caucus" href="<?php print $GLOBALS[base_url]; ?>/rss/caucus" />
 	<!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
