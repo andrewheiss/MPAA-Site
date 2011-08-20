@@ -1,6 +1,6 @@
 /* @override 
 	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
-	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?j
+	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?s
 */
 
 /* @group Sheet setup */
@@ -1083,13 +1083,13 @@ tr.even, tr.odd {
 }
 
 .form-item label {
-	font-weight: normal;
+	font-weight: bold;
 	font-size: .9em;
 }
 
 .form-item .description {
-	margin-top: .4em;
-	font-size: .6em;
+	/*margin-top: .4em;*/
+	font-size: .7em;
 	line-height: 1.4em;
 	color: #919191;
 }
@@ -1350,6 +1350,24 @@ tr.even, tr.odd {
 	font-size: .7em;
 	line-height: 1.4em;
 	padding-bottom: 0;
+}
+
+/* @end */
+
+/* @group Content creation page tweaks */
+
+.filefield-element {
+	margin: 0 0;
+	white-space: normal;
+}
+
+.filefield-element .widget-edit .form-item {
+	margin: 0;
+}
+
+.filefield-sources-list {
+	font-size: .9em;
+	line-height: 1.4em;
 }
 
 /* @end */
