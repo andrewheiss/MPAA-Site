@@ -1356,6 +1356,10 @@ tr.even, tr.odd {
 
 /* @group Content creation page tweaks */
 
+.ckeditor_links, .node-form .tips, .node-form .tips + p {
+	font-size: .8em;
+}
+
 .filefield-element {
 	margin: 0 0;
 	white-space: normal;
