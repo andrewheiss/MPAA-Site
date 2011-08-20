@@ -378,7 +378,7 @@ legend {
 	font-size: 1.1em;
 }
 
-.orange {
+.orange, .help {
 	background: #DE7C19;
 }
 
