@@ -1382,8 +1382,4 @@ tr.even, tr.odd {
 	line-height: 1.4em;
 }
 
-#node-form #edit-preview {
-	display: none;
-}
-
 /* @end */
