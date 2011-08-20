@@ -363,7 +363,7 @@ legend {
 	color: #919191;
 }
 
-.message-box {
+.message-box, .help {
 	font-size: .8em !important;
 	color: #ffffff !important;
 	padding: .4em 1em;
@@ -372,6 +372,10 @@ legend {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
+}
+
+.help p {
+	font-size: 1.1em;
 }
 
 .orange {
@@ -1355,6 +1359,10 @@ tr.even, tr.odd {
 /* @end */
 
 /* @group Content creation page tweaks */
+
+.node-form .form-text, .node-form textarea, .resizable-textarea {
+	width: 99%;
+}
 
 .ckeditor_links, .node-form .tips, .node-form .tips + p {
 	font-size: .8em;

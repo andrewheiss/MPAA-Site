@@ -191,6 +191,8 @@
 				
 				<?php print $messages; ?>
 				
+				<?php print $help; ?>
+				
 				<?php print $content; ?>
 				
 				<?php print $caucus_index; ?>
