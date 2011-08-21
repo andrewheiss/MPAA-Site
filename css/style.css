@@ -1,5 +1,4 @@
 /* @override 
-	http://mpaa/sites/mpaa/themes/mpaa/css/template.css
 	http://mpaa/sites/mpaa/themes/mpaa/css/style.css?s
 */
 
@@ -479,6 +478,12 @@ a:hover {
 #primary li a:hover, #primary .active, #primary .active-trail a, .login-button a:hover {
 	opacity: 1;
 	text-shadow: 0 0 20px rgba(255, 255, 255, .6), 0 2px 2px rgba(0,0,0,.8);  
+}
+
+.social-icons img:hover {
+	-webkit-box-shadow: 0 0 20px 0 rgba(255, 255, 255, .6);
+	-moz-box-shadow: 0 0 20px 0 rgba(255, 255, 255, .6);
+	box-shadow: 0 0 10px 0 rgba(255, 255, 255, .6);
 }
 
 /* @group Suckerfish menu */

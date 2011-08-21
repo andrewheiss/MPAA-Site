@@ -113,8 +113,8 @@
 	<title><?php print $head_title; ?></title>
 	<?php print $head; ?>
 	<?php print $styles; ?>
-	<link rel="alternate" type="application/atom+xml" title="MPAA blog posts" href="<?php print $GLOBALS[base_url]; ?>/rss/blog" />
-	<link rel="alternate" type="application/atom+xml" title="The Caucus" href="<?php print $GLOBALS[base_url]; ?>/rss/caucus" />
+	<link rel="alternate" type="application/rss+xml" title="MPAA blog posts" href="<?php print $GLOBALS[base_url]; ?>/rss/blog" />
+	<link rel="alternate" type="application/rss+xml" title="The Caucus" href="<?php print $GLOBALS[base_url]; ?>/rss/caucus" />
 	<!--[if lt IE 9]>
 	<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -144,11 +144,9 @@
 				</form>
 				
 				<ul class="social-icons">
-					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/facebook.png" alt="Facebook" /></a></li>
-					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/twitter.png" alt="Twitter" /></a></li>
-					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/linkedin.png" alt="LinkedIn" /></a></li>
-					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/youtube.png" alt="YouTube" /></a></li>
-					<li><a href="#"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/flickr.png" alt="Flickr" /></a></li>	
+					<li><a href="http://www.youtube.com/user/mpaabyu"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/youtube.png" alt="YouTube" /></a></li>
+					<li><a href="https://www.facebook.com/byumpa"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/facebook.png" alt="Facebook" /></a></li>
+					<li><a href="https://twitter.com/#!/BYUmpa"><img src="<?php echo base_path() . path_to_theme(); ?>/images/social/16/twitter.png" alt="Twitter" /></a></li>
 				</ul>
 			</div>
 		</section>
