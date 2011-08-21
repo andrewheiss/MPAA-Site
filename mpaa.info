@@ -76,7 +76,7 @@ regions[front_message]	= Front message
 regions[front_row]		= Front page
 regions[caucus_index]	= Caucus index
 regions[footer]         = Footer
-regions[page_closure]   = Page closure
+regions[page_closure]   = Final Javascript (for Google Analytics, etc.)
 
 
   ; Various page elements output by the theme can be toggled on and off. The
