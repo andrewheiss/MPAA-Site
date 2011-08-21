@@ -80,6 +80,12 @@ function add_and_2($string) {
 	return str_replace(',', ' and', $string);
 }
 
+function mpaa_date_display_range($date1, $date2, $timezone = NULL) {
+	return '<span class="date-display-start">'. $date1 .'</span>'.
+	    '<span class="date-display-separator"> &ndash; </span>' .
+	    '<span class="date-display-end">'. $date2 . $timezone. '</span>';
+}
+
 /**
  * Implementation of HOOK_theme().
  */
