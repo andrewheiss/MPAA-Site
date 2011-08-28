@@ -33,7 +33,7 @@ if ($node->field_caucus_posts[0]['items']) {
 			<h3><a href="<?php print url($child->path); ?>"><?php print $child->title; ?></a></h3>
 			<?php print $author_img; ?>
 			<div class="post-meta">
-				<p class="caucus-author"><em>by</em> <?php print $name; ?> <em>on</em> <time datetime="<?php print add_colon(format_date($child->created, 'custom', 'Y-m-d\TH:i:sO')); ?>"><?php print format_date($child->created, 'large'); ?></time> <a href="<?php print url($child->path); ?>#comments" class="comment_count"><?php print $child->comment_count; ?> comment(s)</a></p>
+				<p class="caucus-author"><em>by</em> <?php print $name; ?> <em>on</em> <time datetime="<?php print add_colon(format_date($child->created, 'custom', 'Y-m-d\TH:i:sO')); ?>"><?php print format_date($child->created, 'large'); ?></time> <?php print theme('disqus_comments_num', $child->disqus['domain'], $child->disqus['url']);  ?></p>
 			</div>
 		</header>
 		<?php //print $child->teaser; ?>

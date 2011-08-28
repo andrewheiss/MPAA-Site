@@ -1,0 +1,145 @@
+
+
+/* @group Comments */
+
+#comments header, #comment-preview header {
+	border-top: 2px solid #BCBCBC;
+}
+
+#comments article, #comment-preview article {
+	overflow: hidden;
+	padding: 10px 0;
+	margin: 10px 0;
+	background: #ECECEC;
+	border: 1px solid #d7d7d7;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#comments article header, #comment-preview article header {
+	float: left;
+	/*width: 190px;*/
+	width: 18%;
+	border: none;
+	margin: 0 0 0 10px;
+	font-size: .8em;
+	line-height: 1.4em;
+	padding: 0 10px;
+}
+
+#comments .comment-content, #comment-preview .comment-content {
+	float: left;
+	width: 75%;
+}
+
+#comments article:first-of-type {
+	margin-top: 0;
+}
+
+.comment .links {
+	font-size: .8em;
+	list-style: none;
+	padding: 0;
+	margin: 1em 0;
+	text-transform: uppercase;
+}
+
+.comment .links li {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+.comment .new {
+	color: #DE7C19;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* @end */
+
+/* @group Comment form */
+
+#comments .box {
+	margin-top: 1.5em;
+}
+
+#comment-form-wrapper {
+	overflow: hidden;
+	margin-bottom: 2em;
+}
+
+#comment-form .information, #comment-form .comment-field, #comment-form .misc {
+	float: left;
+}
+
+#comment-form .normal .information {
+	width: 250px;
+}
+
+#comment-form .normal .comment-field {
+	width: 440px;
+}
+
+#comment-form .author .information {
+	width: 150px;
+}
+
+#comment-form .author .comment-field {
+	width: 540px;
+}
+
+.node-type-forum #comment-form .misc {
+	width: 340px;
+	margin: 1.4em 0 0 20px;
+}
+
+.form-item {
+	margin: .5em 0;
+}
+
+.form-item label {
+	font-weight: bold;
+	font-size: .9em;
+}
+
+.form-item .description {
+	/*margin-top: .4em;*/
+	font-size: .7em;
+	line-height: 1.4em;
+	color: #919191;
+}
+
+#comment-form .resizable-textarea {
+	width: 99%;
+}
+
+#comment-form textarea {
+	height: 160px;
+}
+
+#comment-form .tips, .misc p {
+	margin: 0;
+	font-size: .7em;
+	color: #919191;
+}
+
+#comment-form .misc p {
+	margin: .7em 0;
+	padding-bottom: 0;
+}
+
+#comment-form fieldset {
+	margin-bottom: .8em;
+}
+
+#comment-form .form-required {
+	color: #DE7C19;
+}
+
+.form-item input.error, .form-item textarea.error, .form-item select.error {
+  border: 2px solid #DE7C19;
+}
+
+/* @end */

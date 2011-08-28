@@ -802,7 +802,7 @@ ul.primary li.active a:hover, ul.secondary li.active a:hover {
 	margin-bottom: 1.5em;
 }
 
-.comment_count {
+.comment_count, .post-meta .disqus-comments {
 	float: right;
 }
 
@@ -863,280 +863,69 @@ article footer #tags li {
 
 /* @end */
 
-/* @group Forum */
+/* @group Disqus comments */
 
-#forum .links {
-	padding: .5em 0;
-	margin: 0;
-	list-style: none;
-}
-
-tr.even, tr.odd {
-	background-color: #fff;
-	border-bottom: 1px solid #999999;
-	padding: 0;
-}
-
-#forum tr.even {
-	background-color: #ECECEC;
-}
-
-#forum th {
-	padding: .3em .5em;
-	border-bottom: 2px solid #405679;
-	background: #405679;
-	color: #fff;
-}
-
-#forum th a {
-	color: #fff;
-}
-
-#forum th .active img {
-	padding-left: .5em;
-}
-
-#forum td {
-	vertical-align: top;
-}
-
-#forum td.created, #forum td.posts, #forum td.topics, #forum td.last-reply, #forum td.replies, #forum td.pager, #forum td.title {
-	white-space: nowrap;
-	padding: .3em .5em;
-}
-
-#forum tr td.forum {
-	padding-left: 40px;
-	background-position: 5px 5px;
-	background-image: url(../images/forum/forum-default.png);
-	background-repeat: no-repeat;
-}
-
-#forum tr.new-topics td.forum {
-	background-image: url(../images/forum/forum-new.png);
-}
-
-#forum div.indent {
-	margin-left: 0;
-}
-
-#forum table {
-	font-size: .8em;
-}
-
-#forum .name {
-	font-weight: bold;
-}
-
-#forum .description {
-	margin: 0 0 .8em;
-}
-
-#forum .container {
-	padding: .5em;
-}
-
-#forum .forum {
-	width: 660px;
-}
-
-#forum .topics {
-	width: 70px;
-}
-
-#forum .posts {
-	width: 70px;
-}
-
-#forum .last-reply {
-	width: 250px;
-}
-
-#forum .icon {
-	padding: 5px 0 0 5px;
-	width: 35px;
-}
-
-#forum .title {
-	font-weight: bold;
-	width: 445px;
-}
-
-#forum .replies {
-	width: 70px;
-}
-
-#forum .created {
-	width: 250px;
-}
-
-.forum-topic-navigation {
-	font-size: .8em;
-	border-top: 1px solid #999999;
-	text-align: center;
-	padding: 0.5em;
-	overflow: hidden;
-}
-
-.forum-topic-navigation .topic-previous {
-	text-align: right;
-	float: left;
-	width: 48%;
-}
-
-.forum-topic-navigation .topic-next {
-	text-align: left;
-	float: right;
-	width: 48%;
-}
-
-/* @end */
-
-/* @group Comments */
-
-#comments header, #comment-preview header {
-	border-top: 2px solid #BCBCBC;
-}
-
-#comments article, #comment-preview article {
-	overflow: hidden;
-	padding: 10px 0;
-	margin: 10px 0;
-	background: #ECECEC;
-	border: 1px solid #d7d7d7;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
-}
-
-#comments article header, #comment-preview article header {
-	float: left;
-	/*width: 190px;*/
-	width: 18%;
-	border: none;
-	margin: 0 0 0 10px;
-	font-size: .8em;
-	line-height: 1.4em;
-	padding: 0 10px;
-}
-
-#comments .comment-content, #comment-preview .comment-content {
-	float: left;
-	width: 75%;
-}
-
-#comments article:first-of-type {
-	margin-top: 0;
-}
-
-.comment .links {
-	font-size: .8em;
-	list-style: none;
-	padding: 0;
-	margin: 1em 0;
-	text-transform: uppercase;
-}
-
-.comment .links li {
-	display: inline;
-	margin: 0;
-	padding: 0;
-}
-
-.comment .new {
-	color: #DE7C19;
-	text-transform: uppercase;
-	font-weight: bold;
-}
-
-/* @end */
-
-/* @group Comment form */
-
-#comments .box {
-	margin-top: 1.5em;
-}
-
-#comment-form-wrapper {
-	overflow: hidden;
-	margin-bottom: 2em;
-}
-
-#comment-form .information, #comment-form .comment-field, #comment-form .misc {
-	float: left;
-}
-
-#comment-form .normal .information {
-	width: 250px;
-}
-
-#comment-form .normal .comment-field {
-	width: 440px;
-}
-
-#comment-form .author .information {
-	width: 150px;
-}
-
-#comment-form .author .comment-field {
-	width: 540px;
-}
-
-.node-type-forum #comment-form .misc {
-	width: 340px;
-	margin: 1.4em 0 0 20px;
-}
-
-.form-item {
-	margin: .5em 0;
-}
-
-.form-item label {
-	font-weight: bold;
-	font-size: .9em;
-}
-
-.form-item .description {
-	/*margin-top: .4em;*/
-	font-size: .7em;
-	line-height: 1.4em;
-	color: #919191;
-}
-
-#comment-form .resizable-textarea {
-	width: 99%;
-}
-
-#comment-form textarea {
-	height: 160px;
-}
-
-#comment-form .tips, .misc p {
-	margin: 0;
-	font-size: .7em;
-	color: #919191;
-}
-
-#comment-form .misc p {
-	margin: .7em 0;
+#disqus_thread h3 {
 	padding-bottom: 0;
+	margin-bottom: .5em !important;
 }
 
-#comment-form fieldset {
-	margin-bottom: .8em;
+#disqus_thread .dsq-textarea {
+	margin-bottom: 1em;
 }
 
-#comment-form .form-required {
-	color: #DE7C19;
+#disqus_thread .dsq-reply {
+	margin: 0 0 1.5em;
 }
 
-.form-item input.error, .form-item textarea.error, .form-item select.error {
-  border: 2px solid #DE7C19;
+#disqus_thread #dsq-global-toolbar {
+	margin-bottom: 0em !important;
+}
+
+#disqus_thread #dsq-account-dropdown {
+	font-size: .8em;
+	line-height: 1.4em;
+	padding-top: .4em;
+}
+
+#disqus_thread #dsq-footer {
+	font-size: .8em;
 }
 
 /* @end */
 
 /* @group Blocks */
+
+/* @group Disqus comment list */
+
+.dsq-widget-comment {
+	color: #919191;
+	font-size: .8em;
+	line-height: 1.4em;
+}
+
+.dsq-widget-user {
+	font-size: .8em;
+	line-height: 1.4em;
+	font-weight: normal !important;
+}
+
+.dsq-widget-avatar {
+	padding: .4em .5em .5em 0 !important;
+}
+
+.dsq-widget-meta {
+	font-style: italic;
+	font-size: .7em !important;
+	text-align: right;
+}
+
+.region-caucus-index p {
+	font-size: .9em;
+	color: inherit;
+}
+
+/* @end */
 
 .region-front-message {
 	border-bottom: 1px solid #BCBCBC;
@@ -1175,6 +964,7 @@ tr.even, tr.odd {
 
 .block .item-list ul {
 	font-size: 1em;
+	margin-left: 0;
 }
 
 .block .item-list ul li {
@@ -1203,11 +993,6 @@ tr.even, tr.odd {
 	font-size: .8em;
 	line-height: 1.4em;
 	padding-bottom: .7em;
-}
-
-.region-caucus-index p {
-	font-size: .9em;
-	color: inherit;
 }
 
 .block li p {
@@ -1269,6 +1054,7 @@ tr.even, tr.odd {
 	float: left;
 	margin-right: 1em;
 	font-size: .8em;
+	line-height: 1.4em;
 	padding-bottom: .5em;
 }
 

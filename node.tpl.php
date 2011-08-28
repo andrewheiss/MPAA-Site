@@ -62,7 +62,7 @@ if ($node->type == 'blog' || $node->type == 'news') {
 				print $author_img;
 			} ?>
 			<div class="post-meta">
-				<p<?php print $caucus_class; ?>><em>by</em> <?php print $name; ?> <em>on</em> <time datetime="<?php print add_colon(format_date($created, 'custom', 'Y-m-d\TH:i:sO')); ?>"<?php print $pubdate; ?>><?php print format_date($created, 'large'); ?></time> <a href="<?php print $node_url; ?>#comments" class="comment_count"><?php print $comment_count; ?> comment(s)</a></p>
+				<p<?php print $caucus_class; ?>><em>by</em> <?php print $name; ?> <em>on</em> <time datetime="<?php print add_colon(format_date($created, 'custom', 'Y-m-d\TH:i:sO')); ?>"<?php print $pubdate; ?>><?php print format_date($created, 'large'); ?></time> <?php print theme('disqus_comments_num', $node->disqus['domain'], $node->disqus['url']);  ?></p>
 			</div>
 			<?php endif; ?>
 		</header>
@@ -94,4 +94,9 @@ if ($node->type == 'blog' || $node->type == 'news') {
 if ($show_links) {
 	print $links; 
 }
+
+if ($node->disqus_comments) {
+	print $node->disqus_comments;
+}
+
 ?>

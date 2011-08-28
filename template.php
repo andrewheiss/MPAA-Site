@@ -97,7 +97,7 @@ function mpaa_theme(&$existing, $type, $theme, $path) {
   */
   // @TODO: Needs detailed comments. Patches welcome!
 
-  $hooks['comment_form'] = array ('arguments' => array('form' => NULL));
+  // $hooks['comment_form'] = array ('arguments' => array('form' => NULL));
 
   // $hooks['user_login'] = array ('template' => 'user-login', 'arguments' => array('form' => NULL));
   // $hooks['user_register'] = array ('template' => 'user-register', 'arguments' => array('form' => NULL));
@@ -278,50 +278,50 @@ function mpaa_breadcrumb($breadcrumb) {
   return $crumbs;
 }
 
-function mpaa_comment_form($form) {
-	// Rename some of the form element labels.
-	$form['name']['#title'] = t('Name');
-	$form['homepage']['#title'] = t('Website');
-	$form['comment_filter']['comment']['#title']  = t('Your comment');	
-	$form['mail']['#description'] = t('(Will not be shared or displayed)');
-	$form['submit']['#value'] = t('Post comment');
-	
-	// Output comment form
-	$output = '';
-	if ($form['comment_preview']) {
-		$form['comment_preview']['#prefix'] = '<div id="comment-preview">';
-		$output .= drupal_render($form['comment_preview']);
-	}
-	
-	if ($form['_author']) {
-		$class = 'author';
-	} else {
-		$class = 'normal';
-	}
-	$output .= "<div id=\"comment-form-wrapper\" class=\"$class\">";
-	
-	$output .= '<div class="information">';
-	if ($form['_author']) {
-		$output .= drupal_render($form['_author']);
-	}
-	$output .= drupal_render($form['name']);
-	$output .= drupal_render($form['mail']);
-	$output .= drupal_render($form['homepage']);
-	$output .= '</div>';
-	$output .= '<div class="comment-field">';
-	$output .= drupal_render($form['comment_filter']['comment']);
-	$output .= '</div>';
-	$output .= '<div class="misc">';
-	$output .= drupal_render($form);
-	$output .= '</div>';
-	$output .= '</div>';
-	
-	// echo "<pre>";
-	// print_r($form);
-	// echo "</pre>";
-	
-	return $output;
-}
+// function mpaa_comment_form($form) {
+// 	// Rename some of the form element labels.
+// 	$form['name']['#title'] = t('Name');
+// 	$form['homepage']['#title'] = t('Website');
+// 	$form['comment_filter']['comment']['#title']  = t('Your comment');	
+// 	$form['mail']['#description'] = t('(Will not be shared or displayed)');
+// 	$form['submit']['#value'] = t('Post comment');
+// 	
+// 	// Output comment form
+// 	$output = '';
+// 	if ($form['comment_preview']) {
+// 		$form['comment_preview']['#prefix'] = '<div id="comment-preview">';
+// 		$output .= drupal_render($form['comment_preview']);
+// 	}
+// 	
+// 	if ($form['_author']) {
+// 		$class = 'author';
+// 	} else {
+// 		$class = 'normal';
+// 	}
+// 	$output .= "<div id=\"comment-form-wrapper\" class=\"$class\">";
+// 	
+// 	$output .= '<div class="information">';
+// 	if ($form['_author']) {
+// 		$output .= drupal_render($form['_author']);
+// 	}
+// 	$output .= drupal_render($form['name']);
+// 	$output .= drupal_render($form['mail']);
+// 	$output .= drupal_render($form['homepage']);
+// 	$output .= '</div>';
+// 	$output .= '<div class="comment-field">';
+// 	$output .= drupal_render($form['comment_filter']['comment']);
+// 	$output .= '</div>';
+// 	$output .= '<div class="misc">';
+// 	$output .= drupal_render($form);
+// 	$output .= '</div>';
+// 	$output .= '</div>';
+// 	
+// 	// echo "<pre>";
+// 	// print_r($form);
+// 	// echo "</pre>";
+// 	
+// 	return $output;
+// }
 
 function mpaa_preprocess_user_login(&$vars) {
 	drupal_add_js('misc/collapse.js');
