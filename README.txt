@@ -8,7 +8,7 @@ Unfortunately, the maintainers of Poor Man's Cron and Feeds are in a deadlock ov
 
 To fix this, I patched `feeds/plugins/FeedsFeedNodeProcessor.inc`, wrapping the following code (around lines 46-56)
 
-	if ($bath->created) {
+	if ($batch->created) {
 		drupal_set_message(…);
 	} elseif {
 		…
